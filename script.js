@@ -1,4 +1,4 @@
-// Datos de ejemplo
+// Insertar datos como antes
 const datos = {
   nombre: "6x9: A Virtual Experience of Solitary Confinement",
   anio: "2016",
@@ -9,7 +9,7 @@ const datos = {
   reflexion: "La capacidad inmersiva de esta experiencia es muy potente..."
 };
 
-// Insertar datos
+
 document.getElementById("nombre").textContent = datos.nombre;
 document.getElementById("anio").textContent = datos.anio;
 document.getElementById("medio").textContent = datos.medio;
@@ -18,34 +18,24 @@ document.getElementById("url").href = datos.url;
 document.getElementById("argumento").textContent = datos.argumento;
 document.getElementById("reflexion").textContent = datos.reflexion;
 
-// Interactividad: mostrar/ocultar argumento
-const btnArgumento = document.getElementById("toggleArgumento");
-const argumentoTexto = document.getElementById("argumento");
+// Funcionalidad para todos los botones toggle
+const toggleButtons = document.querySelectorAll('.toggle-btn');
 
-btnArgumento.addEventListener("click", () => {
-  if (argumentoTexto.classList.contains("mostrar")) {
-    argumentoTexto.classList.remove("mostrar");
-    argumentoTexto.classList.add("oculto");
-    btnArgumento.textContent = "Mostrar argumento";
-  } else {
-    argumentoTexto.classList.remove("oculto");
-    argumentoTexto.classList.add("mostrar");
-    btnArgumento.textContent = "Ocultar argumento";
-  }
-});
+toggleButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const targetId = btn.getAttribute('data-target');
+    const target = document.getElementById(targetId);
 
-// Interactividad: mostrar/ocultar reflexión
-const btnReflexion = document.getElementById("toggleReflexion");
-const reflexionTexto = document.getElementById("reflexion");
+    // Mostrar u ocultar contenido
+    target.classList.toggle('mostrar');
+    target.classList.toggle('oculto');
 
-btnReflexion.addEventListener("click", () => {
-  if (reflexionTexto.classList.contains("mostrar")) {
-    reflexionTexto.classList.remove("mostrar");
-    reflexionTexto.classList.add("oculto");
-    btnReflexion.textContent = "Mostrar reflexión";
-  } else {
-    reflexionTexto.classList.remove("oculto");
-    reflexionTexto.classList.add("mostrar");
-    btnReflexion.textContent = "Ocultar reflexión";
-  }
+    // Cambiar texto del botón
+    btn.textContent = target.classList.contains('mostrar') ? 
+                      `Ocultar ${targetId}` : 
+                      `Mostrar ${targetId}`;
+
+    // Hacer scroll suave hasta el contenido
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
 });
