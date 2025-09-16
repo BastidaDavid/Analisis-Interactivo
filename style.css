@@ -1,13 +1,17 @@
-/* ======================= */
-/* Estilos globales */
-body {
+body
+ {
   font-family: "Segoe UI", Arial, sans-serif;
-  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+
   color: #e0e0e0;
   line-height: 1.6;
   margin: 0;
   padding: 0;
+
+  /* Fondo */
+  background: url('img/Carcel.jpg') no-repeat center center fixed;
+  background-size: cover;
 }
+
 
 /* Contenedor principal */
 .container {
@@ -205,12 +209,3 @@ audio {
   margin-top: 20px;
 }
 
-body {
-  background-image: url('img/Carcel.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  margin: 0;
-  padding: 0;
-
-}
