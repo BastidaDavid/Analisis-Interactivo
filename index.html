@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Experiencia Interactiva - Análisis</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Ficha de la Experiencia Interactiva</h1>
+
+    <!-- FICHA -->
+    <section class="ficha">
+      <p><strong>Nombre:</strong> <span id="nombre"></span></p>
+      <p><strong>Año de creación:</strong> <span id="anio"></span></p>
+      <p><strong>Medio de comunicación:</strong> <span id="medio"></span></p>
+      <p><strong>Tipo de formato interactivo:</strong> <span id="formato"></span></p>
+      <p><strong>URL de acceso:</strong> <a id="url" href="#" target="_blank">Ver experiencia</a></p>
+    </section>
+
+    <!-- ARGUMENTO -->
+    <section class="argumento">
+      <h2>Argumento</h2>
+      <p id="argumento"></p>
+    </section>
+
+    <!-- REFLEXIÓN INTERACTIVA -->
+    <section class="reflexion">
+      <h2>Reflexión Final</h2>
+      <button id="toggleReflexion">Mostrar reflexión</button>
+      <p id="reflexion" class="oculto"></p>
+    </section>
+
+    <!-- AUDIO -->
+    <section class="audio">
+      <h2>Escucha mientras lees 🎵</h2>
+      <audio controls>
+        <source src="audio.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+      </audio>
+    </section>
+  </div>
+
+  <!-- Script con los datos e interactividad -->
+  <script src="script.js"></script>
+</body>
+</html>
