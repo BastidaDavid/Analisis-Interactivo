@@ -158,3 +158,40 @@ audio {
   height: auto;
   border-radius: 8px;
 }
+
+.contenido-flex {
+  display: flex;
+  gap: 30px; /* espacio entre las columnas */
+  margin-top: 20px;
+  flex-wrap: wrap; /* para que en móviles se acomode abajo */
+}
+
+.argumento-box, .reflexion-box {
+  flex: 1; /* cada uno toma el mismo espacio */
+  background: #1f1f1f;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.argumento-box h2, .reflexion-box h2 {
+  border-bottom: 1px solid #333;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.argumento-box p, .reflexion-box p {
+  line-height: 1.5;
+}
+
+/* Botón de reflexión */
+.reflexion-box button {
+  margin-bottom: 10px;
+}
+
+/* Responsive: en pantallas chicas, se apilen */
+@media (max-width: 768px) {
+  .contenido-flex {
+    flex-direction: column;
+  }
+}
