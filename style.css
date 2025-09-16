@@ -1,65 +1,99 @@
+/* ======================= */
 /* Estilos globales */
 body {
   font-family: "Segoe UI", Arial, sans-serif;
-  background: #121212;
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
   color: #e0e0e0;
   line-height: 1.6;
   margin: 0;
   padding: 0;
 }
 
-/* Contenedor */
+/* Contenedor principal */
 .container {
-  width: 80%;
-  margin: 30px auto;
-  background: #1e1e1e;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  width: 85%;
+  max-width: 900px;
+  margin: 40px auto;
+  background: #1f1f1f;
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.8);
 }
 
+/* ======================= */
 /* Títulos */
 h1, h2 {
   color: #ffffff;
-  border-bottom: 1px solid #333;
-  padding-bottom: 8px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-weight: 700;
 }
 
+/* ======================= */
+/* Secciones */
+section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #292929;
+  border-radius: 12px;
+  box-shadow: inset 0 0 10px rgba(255,255,255,0.03);
+  transition: background 0.3s ease;
+}
+section:hover {
+  background: #2f2f2f;
+}
+
+/* ======================= */
 /* Links */
 a {
   color: #4dabf7;
   text-decoration: none;
+  font-weight: 600;
 }
 a:hover {
   text-decoration: underline;
+  color: #74c0fc;
 }
 
-/* Botón */
+/* ======================= */
+/* Botones */
 button {
-  background: #4dabf7;
-  color: #121212;
+  background: linear-gradient(135deg, #4dabf7, #74c0fc);
+  color: #fff;
   border: none;
-  padding: 10px 15px;
-  border-radius: 6px;
-  font-size: 14px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 15px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
 button:hover {
-  background: #74c0fc;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.6);
 }
 
+/* ======================= */
 /* Texto oculto/mostrar */
 .oculto {
-  display: none;
+  max-height: 0;
+  overflow: hidden;
   opacity: 0;
-  transition: opacity 0.8s ease;
+  transition: all 0.6s ease;
 }
 .mostrar {
-  display: block;
+  max-height: 500px; /* suficiente para párrafos largos */
   opacity: 1;
 }
 
+/* ======================= */
 /* Audio */
 .audio {
   margin-top: 20px;
@@ -67,9 +101,11 @@ button:hover {
 audio {
   width: 100%;
   margin-top: 10px;
-  border-radius: 6px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
+/* ======================= */
 /* Animación de máquina de escribir */
 .typewriter {
   border-right: 2px solid #4dabf7;
@@ -88,5 +124,18 @@ audio {
   }
   100% {
     border-color: #4dabf7;
+  }
+}
+
+/* ======================= */
+/* Responsivo */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 25px;
+  }
+  button {
+    width: 100%;
+    text-align: center;
   }
 }
