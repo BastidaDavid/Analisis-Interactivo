@@ -161,13 +161,13 @@ audio {
 
 .contenido-flex {
   display: flex;
-  gap: 30px; /* espacio entre las columnas */
+  gap: 30px;           /* espacio entre Argumento y Reflexión */
   margin-top: 20px;
-  flex-wrap: wrap; /* para que en móviles se acomode abajo */
+  flex-wrap: wrap;      /* para que en móviles se apilen */
 }
 
 .argumento-box, .reflexion-box {
-  flex: 1; /* cada uno toma el mismo espacio */
+  flex: 1;              /* cada uno ocupa el mismo espacio */
   background: #1f1f1f;
   padding: 20px;
   border-radius: 12px;
@@ -184,9 +184,11 @@ audio {
   line-height: 1.5;
 }
 
-/* Botón de reflexión */
-.reflexion-box button {
-  margin-bottom: 10px;
+/* Responsive: en pantallas pequeñas se apilan */
+@media (max-width: 768px) {
+  .contenido-flex {
+    flex-direction: column;
+  }
 }
 
 /* Responsive: en pantallas chicas, se apilen */
@@ -194,4 +196,30 @@ audio {
   .contenido-flex {
     flex-direction: column;
   }
+}
+
+.juego {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+/* Centramos los botones dentro de las cajas */
+.argumento-box button,
+.reflexion-box button {
+  display: block;
+  margin: 0 auto 15px auto;
+  width: fit-content;
+}
+
+/* Transición más suave para mostrar/ocultar */
+.oculto {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.6s ease, opacity 0.6s ease;
+}
+.mostrar {
+  max-height: 1000px; /* suficiente para textos largos */
+  opacity: 1;
 }
