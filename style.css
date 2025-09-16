@@ -204,3 +204,13 @@ audio {
   align-items: center;
   margin-top: 20px;
 }
+
+.container {
+  background-image: url('img/Carcel.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 16px;
+  padding: 35px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+}
