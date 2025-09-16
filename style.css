@@ -205,12 +205,16 @@ audio {
   margin-top: 20px;
 }
 
-.container {
-  background-image: url('img/Carcel.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 16px;
-  padding: 35px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #e0e0e0;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+
+  /* Fondo */
+  background-image: url('img/tu_nombre_de_imagen.jpg');
+  background-size: cover;       /* Ajusta la imagen para cubrir todo */
+  background-position: center;  /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que se repita */
 }
