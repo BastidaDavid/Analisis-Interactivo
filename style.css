@@ -142,25 +142,19 @@ audio {
 
 
 /* Contenedor horizontal de logo + info */
-.ficha-container {
+.ficha-contenido {
   display: flex;
-  align-items: center;
-  gap: 20px; /* espacio entre logo y info */
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px; /* espacio entre info y logo */
 }
 
-/* Logo */
-.ficha-container .logo img {
-  width: 120px;       /* ajusta al tamaño que quieras */
+.ficha .info {
+  flex: 1; /* toma todo el espacio disponible */
+}
+
+.ficha .logo img {
+  max-width: 150px;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-  transition: transform 0.3s ease;
-}
-.ficha-container .logo img:hover {
-  transform: scale(1.05);
-}
-
-/* Información */
-.ficha-container .info {
-  flex: 1; /* ocupa todo el espacio restante */
+  border-radius: 8px;
 }
