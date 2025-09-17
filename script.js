@@ -5,7 +5,7 @@ const datos = {
     en: "The Guardian\nBritish newspaper known for independent journalism",
     es: "The Guardian\nPeriódico británico reconocido por su periodismo independiente"
   },
-  
+
   medioInfo: {
     en: "The Guardian is a British newspaper founded in 1821, recognized worldwide for its independent journalism, investigative reporting, and progressive editorial stance. Founded in 1821 as The Manchester Guardian by John Edward Taylor, it has been part of the Scott Trust since 1936, ensuring financial and editorial independence with profits reinvested into journalism. Editor-in-chief Katharine Viner has led its digital transformation, reaching global audiences, especially in the US, with growing subscription and donation revenue. In 2018 it adopted a modern tabloid format for print. Innovations like Secure Messaging, developed with Cambridge University, allow secure communication between journalists and sources. The Guardian focuses on human rights, social justice, and the environment, combining narrative, investigation, and technology to foster empathy, awareness, and critical reflection. Its reader-funded model ensures independence from corporations or governments, making it a global benchmark of ethical journalism.",
     es: "The Guardian es un periódico británico fundado en 1821, reconocido mundialmente por su periodismo independiente, reportajes de investigación y postura editorial progresista. Fundado en 1821 como The Manchester Guardian por John Edward Taylor, pertenece al Scott Trust desde 1936, garantizando su independencia financiera y editorial, con beneficios reinvertidos en periodismo. La editora en jefe, Katharine Viner, ha impulsado su transformación digital, alcanzando audiencias globales, especialmente en Estados Unidos, y generando ingresos crecientes mediante suscripciones y donaciones. En 2018 adoptó un formato tabloide moderno para la edición impresa. Innovaciones como la herramienta Secure Messaging, desarrollada con la Universidad de Cambridge, permiten comunicaciones seguras entre periodistas y fuentes. The Guardian se centra en derechos humanos, justicia social y medio ambiente, combinando narrativa, investigación y tecnología para generar empatía, conciencia y reflexión crítica. Su modelo de financiamiento basado en lectores asegura independencia frente a corporaciones o gobiernos, consolidándolo como referente global del periodismo ético y de calidad."
@@ -50,7 +50,7 @@ const textosTabs = {
 
 // Contenido de cada tab
 const textosTabsContenido = {
-  "tab-estetica": { en: datos.analisis.en.split('\n')[0], es: datos.analisis.es.split('\n')[0] },
+  "tab-estetica": { en: "The experience combines 3D computer-generated elements with realistic environments of a small prison cell.", es: "La experiencia combina elementos 3D generados con entornos realistas de una pequeña celda." },
   "tab-ocularizacion": { en: "Presented in first person, immersing the user as the protagonist.", es: "Se presenta en primera persona, haciendo que el usuario viva la experiencia como protagonista." },
   "tab-relato": { en: "The narrative is linear, following the prisoner's routine step by step.", es: "El relato es lineal: seguimos la rutina del prisionero dentro de la celda paso a paso." },
   "tab-interaccion": { en: "The user can explore the cell, interact with objects, and hear diegetic sounds.", es: "El usuario puede explorar la celda, interactuar con objetos y escuchar sonidos diegéticos del entorno." },
