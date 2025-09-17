@@ -339,3 +339,10 @@ audio {
 .analisis-tabs .tabs {
   margin-bottom: 15px;  /* espacio entre tabs y contenido */
 }
+.analisis-tabs .tabs {
+  gap: 8px; /* menos espacio entre botones */
+}
+
+.tab-content .tab-panel p {
+  line-height: 1.4; /* más compacto */
+}
