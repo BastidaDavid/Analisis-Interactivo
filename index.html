@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Experiencia Interactiva - Análisis</title>
+  <title>Interactive Experience - Analysis</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,22 +11,22 @@
 <div class="container">
 
 <section class="ficha">
-    <h1>Ficha de la Experiencia Interactiva</h1>
-    <button id="playAudio" title="Escuchar música">🔊</button>
+    <h1>Interactive Experience Sheet</h1>
+    <button id="playAudio" title="Listen to music">🔊</button>
         <audio id="audio" src="invocation - Lish Grooves.mp3"></audio>
     <div class="ficha-contenido">
 
       
-      <!-- Información principal -->
+      <!-- Main information -->
       <div class="info">
-        <p><strong>Nombre:</strong> <span id="nombre"></span></p>
-        <p><strong>Año de creación:</strong> <span id="anio"></span></p>
-        <p><strong>Medio:</strong> <span id="medio"></span></p>
-        <p><strong>Formato:</strong> <span id="formato"></span></p>
-        <p><strong>URL:</strong> <a id="url" href="#" target="_blank">Ver experiencia</a></p>
+        <p><strong>Name:</strong> <span id="nombre"></span></p>
+        <p><strong>Year of creation:</strong> <span id="anio"></span></p>
+        <p><strong>Media:</strong> <span id="medio"></span></p>
+        <p><strong>Format:</strong> <span id="formato"></span></p>
+        <p><strong>URL:</strong> <a id="url" href="#" target="_blank">View experience</a></p>
       </div>
 
-      <!-- Logo + botón de audio -->
+      <!-- Logo + audio button -->
       <div class="logo-audio">
         <img src="img/The_Guardian_Logo.jpg" alt="Logotipo de The Guardian">
 
@@ -34,9 +34,9 @@
 
     </div>
   </section>
-  <!-- Video de YouTube -->
+  <!-- Experience Video -->
 <section class="video">
-  <h2>Video de la Experiencia</h2>
+  <h2>Experience Video</h2>
   <div class="video-responsive">
     <iframe src="https://www.youtube.com/embed/hwbJLlbeAS0?autoplay=1&mute=1&controls=0&rel=0" 
             frameborder="0" 
@@ -46,30 +46,30 @@
   </div>
 </section>
 
-  <!-- Sección con Medio, Argumento y Reflexión -->
+  <!-- Section with Media, Argument and Reflection -->
   <section class="contenido-flex">
     <div class="medio-box">
       <h2>The Guardian</h2>
-      <button class="toggle-btn" data-target="medio-info">Mostrar info</button>
-      <p id="medio-info" class="oculto">Aquí puedes poner información sobre el medio, historia, objetivos, etc.</p>
+      <button class="toggle-btn" data-target="medio-info">Show info</button>
+      <p id="medio-info" class="oculto">Here you can add information about the media, history, objectives, etc.</p>
     </div>
 
     <div class="argumento-box">
-      <h2>Argumento</h2>
-      <button class="toggle-btn" data-target="argumento">Mostrar argumento</button>
+      <h2>Plot</h2>
+      <button class="toggle-btn" data-target="argumento">Show plot</button>
       <p id="argumento" class="oculto"></p>
     </div>
 
     <div class="reflexion-box">
-      <h2>Reflexión Final</h2>
-      <button class="toggle-btn" data-target="reflexion">Mostrar reflexión</button>
+      <h2>Final Reflection</h2>
+      <button class="toggle-btn" data-target="reflexion">Show reflection</button>
       <p id="reflexion" class="oculto"></p>
     </div>
   </section>
 
   <section class="juego">
     <a href="https://www.theguardian.com/world/ng-interactive/2016/apr/27/6x9-a-virtual-experience-of-solitary-confinement#gvr-360" target="_blank">
-      <button>Ir al Juego</button>
+      <button>Go to the Experience</button>
     </a>
   </section>
 
