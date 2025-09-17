@@ -9,70 +9,60 @@
 
 
 <div class="container">
-
-
-
+  
 <section class="ficha">
-  
-  <h1>Ficha de la Experiencia Interactiva</h1>
-  
-  <div class="ficha-contenido">
-    <div class="info">
-      <p><strong>Nombre:</strong> <span id="nombre"></span></p>
-      <p><strong>Año de creación:</strong> <span id="anio"></span></p>
-      <p><strong>Medio:</strong> <span id="medio"></span></p>
-      <p><strong>Formato:</strong> <span id="formato"></span></p>
-      <p><strong>URL:</strong> <a id="url" href="#" target="_blank">Ver experiencia</a></p>
+    <h1>Ficha de la Experiencia Interactiva</h1>
+    
+    <div class="ficha-contenido">
+      
+      <!-- Información principal -->
+      <div class="info">
+        <p><strong>Nombre:</strong> <span id="nombre"></span></p>
+        <p><strong>Año de creación:</strong> <span id="anio"></span></p>
+        <p><strong>Medio:</strong> <span id="medio"></span></p>
+        <p><strong>Formato:</strong> <span id="formato"></span></p>
+        <p><strong>URL:</strong> <a id="url" href="#" target="_blank">Ver experiencia</a></p>
+      </div>
+
+      <!-- Logo + botón de audio -->
+      <div class="logo-audio">
+        <img src="img/The_Guardian_Logo.jpg" alt="Logotipo de The Guardian">
+        <button id="playAudio" title="Escuchar música">🔊</button>
+        <audio id="audio" src="audio.mp3"></audio>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Sección con Medio, Argumento y Reflexión -->
+  <section class="contenido-flex">
+    <div class="medio-box">
+      <h2>The Guardian</h2>
+      <button class="toggle-btn" data-target="medio-info">Mostrar info</button>
+      <p id="medio-info" class="oculto">Aquí puedes poner información sobre el medio, historia, objetivos, etc.</p>
     </div>
 
-    <div class="logo-audio">
-      <img src="img/The_Guardian_Logo.jpg" alt="Logotipo de The Guardian">
-      <button id="playAudio" title="Escuchar música">🔊</button>
-      <audio id="audio" src="audio.mp3"></audio>
+    <div class="argumento-box">
+      <h2>Argumento</h2>
+      <button class="toggle-btn" data-target="argumento">Mostrar argumento</button>
+      <p id="argumento" class="oculto"></p>
     </div>
-  </div>
-</section>
 
-    <div class="logo">
-      <img src="img/The_Guardian_Logo.jpg" alt="Logotipo de The Guardian">
+    <div class="reflexion-box">
+      <h2>Reflexión Final</h2>
+      <button class="toggle-btn" data-target="reflexion">Mostrar reflexión</button>
+      <p id="reflexion" class="oculto"></p>
     </div>
-  </div>
-</section>
+  </section>
 
-
-<section class="contenido-flex">
-  <!-- BOTÓN + CONTENIDO MEDIO -->
-  <div class="medio-box">
-    <h2>The Guardian</h2>
-    <button class="toggle-btn" data-target="medio-info">Mostrar info</button>
-    <p id="medio-info" class="oculto">Aquí puedes poner información sobre el medio, historia, objetivos, etc.</p>
-  </div>
-
-  <!-- BOTÓN + CONTENIDO ARGUMENTO -->
-  <div class="argumento-box">
-    <h2>Argumento</h2>
-    <button class="toggle-btn" data-target="argumento">Mostrar argumento</button>
-    <p id="argumento" class="oculto"></p>
-  </div>
-
-  <!-- BOTÓN + CONTENIDO REFLEXIÓN -->
-  <div class="reflexion-box">
-    <h2>Reflexión Final</h2>
-    <button class="toggle-btn" data-target="reflexion">Mostrar reflexión</button>
-    <p id="reflexion" class="oculto"></p>
-  </div>
-</section>
-
-
-<section class="juego">
-  <a href="https://www.theguardian.com/world/ng-interactive/2016/apr/27/6x9-a-virtual-experience-of-solitary-confinement#gvr-360" target="_blank">
-    <button>Ir al Juego</button>
-  </a>
-</section>
+  <section class="juego">
+    <a href="https://www.theguardian.com/world/ng-interactive/2016/apr/27/6x9-a-virtual-experience-of-solitary-confinement#gvr-360" target="_blank">
+      <button>Ir al Juego</button>
+    </a>
+  </section>
 
 </div>
 
-  <!-- Script con los datos e interactividad -->
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
