@@ -357,19 +357,21 @@ audio {
   box-shadow: 0 2px 6px rgba(0,0,0,0.2); /* sombra ligera */
 }
 
-.panel-contenido img {
-  max-width: 60%; /* aumentar, por ejemplo al 60% del contenedor */
-  width: auto;    /* que mantenga la proporción */
-  height: auto;
-  margin-left: 20px; /* algo de espacio desde el texto hacia la derecha */
+.panel-contenido {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .panel-contenido p {
-  flex: 2; /* darle más peso al texto si el texto ocupa demasiado */
+  flex: 1;
 }
 
-.panel-contenido {
-  gap: 20px; /* aumentar el espacio entre texto y la imagen para que respiren */
+.panel-contenido img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 10px;
 }
 
 .slider {
