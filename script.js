@@ -8,12 +8,12 @@ const datos = {
   formato: "Realidad Virtual / 360°",
   url: "https://www.theguardian.com/world/ng-interactive/2016/apr/27/6x9-a-virtual-experience-of-solitary-confinement#gvr-360",
   argumento: {
-    en: "...",
-    es: "..."
+    en: "This VR experience simulates the life of a prisoner in solitary confinement. The user navigates a 6x9-foot virtual cell, observing the environment and listening to recorded testimonies.",
+    es: "Esta experiencia VR simula la vida de un preso en confinamiento solitario. El usuario recorre una celda virtual de 6x9 pies, observando el entorno y escuchando testimonios grabados."
   },
   reflexion: {
-    en: "...",
-    es: "..."
+    en: "The experience invites viewers to reflect on human rights and prison conditions, emphasizing the psychological impact of isolation.",
+    es: "La experiencia invita a los espectadores a reflexionar sobre los derechos humanos y las condiciones carcelarias, enfatizando el impacto psicológico del aislamiento."
   },
   analisis: {
     en: "The VR piece is not only an artistic experience but also a journalistic experiment. By simulating the cell environment, The Guardian uses immersive media to strengthen its investigative reporting. This approach bridges journalism and activism, encouraging audiences to reflect on systemic issues such as prison reform and human rights.",
@@ -96,4 +96,4 @@ const btnPlayAudio = document.getElementById('playAudio');
 btnPlayAudio.addEventListener('click', () => {
   audio.play();
 });
-target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
