@@ -50,7 +50,8 @@ const textosTabs = {
 
 // Contenido de cada tab
 const textosTabsContenido = {
-  "tab-estetica": { en: "    Esta es una experiencia 3D generada por computadora de una pequeña celda de prisión. Se mantiene en un ambiente oscuro y con colores apagados para transmitir la sensación de aislamiento, haciendo que el usuario sienta la claustrofobia de la prisión, junto con la narrativa de ex-prisioneros." },
+  "tab-estetica": { en: "This is a computer-generated 3D experience of a small prison cell. It is set in a dark environment with muted colors to convey a sense of isolation, making the user feel the claustrophobia of the prison, combined with the narrative of former prisoners.", 
+    es:"Esta es una experiencia 3D generada por computadora de una pequeña celda de prisión. Se mantiene en un ambiente oscuro y con colores apagados para transmitir la sensación de aislamiento, haciendo que el usuario sienta la claustrofobia de la prisión, junto con la narrativa de ex-prisioneros." },
   "tab-ocularizacion": { en: "Presented in first person, immersing the user as the protagonist.", es: "Se presenta en primera persona, haciendo que el usuario viva la experiencia como protagonista." },
   "tab-relato": { en: "The narrative is linear, following the prisoner's routine step by step.", es: "El relato es lineal: seguimos la rutina del prisionero dentro de la celda paso a paso." },
   "tab-interaccion": { en: "The user can explore the cell, interact with objects, and hear diegetic sounds.", es: "El usuario puede explorar la celda, interactuar con objetos y escuchar sonidos diegéticos del entorno." },
