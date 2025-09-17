@@ -121,3 +121,54 @@ const textosToggle = {
   "argumento": { en: "Show plot", es: "Mostrar argumento", enHide: "Hide plot", esHide: "Ocultar argumento" },
   "reflexion": { en: "Show reflection", es: "Mostrar reflexión", enHide: "Hide reflection", esHide: "Ocultar reflexión" }
 };
+
+// ========================
+// Tabs de análisis
+const tabButtons = document.querySelectorAll('.tab-btn');
+const tabPanels = document.querySelectorAll('.tab-panel');
+
+tabButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    // Desactivar todos los botones y paneles
+    tabButtons.forEach(b => b.classList.remove('active'));
+    tabPanels.forEach(p => p.classList.remove('active'));
+
+    // Activar el seleccionado
+    btn.classList.add('active');
+    const panel = document.getElementById(btn.dataset.target);
+    panel.classList.add('active');
+
+    // Actualizar contenido según el idioma
+    const key = btn.dataset.target.replace('tab-', '');
+    let texto, imgSrc;
+    switch(key) {
+      case 'estetica':
+        texto = isEnglish ? "For me, This VR experience combines narrative storytelling with interactive elements." : "Para mi , esta experiencia VR combina la narración con elementos interactivos.";
+        imgSrc = "img/estetica-visual.jpg";
+        break;
+      case 'ocularizacion':
+        texto = isEnglish ? "Presented in first person, immersing the user as the protagonist." : "Se presenta en primera persona, haciendo que el usuario viva la experiencia como protagonista.";
+        imgSrc = "img/ocularizacion.jpg";
+        break;
+      case 'relato':
+        texto = isEnglish ? "The narrative is linear, following the prisoner's routine step by step." : "El relato es lineal: seguimos la rutina del prisionero dentro de la celda paso a paso.";
+        imgSrc = "img/estructura-relato.jpg";
+        break;
+      case 'interaccion':
+        texto = isEnglish ? "The user can explore the cell, interact with objects, and hear diegetic sounds." : "El usuario puede explorar la celda, interactuar con objetos y escuchar sonidos diegéticos del entorno.";
+        imgSrc = "img/interaccion.jpg";
+        break;
+      case 'sonido':
+        texto = isEnglish ? "Ambient sound and ex-prisoner dialogues reinforce immersion." : "Sonido ambiental y diálogos de ex-prisioneros refuerzan la inmersión y la atmósfera emocional.";
+        imgSrc = "img/sonido.jpg";
+        break;
+      case 'protagonista':
+        texto = isEnglish ? "The user is the protagonist, experiencing the VR in first person." : "El usuario es el protagonista, viviendo la experiencia en primera persona dentro de la celda.";
+        imgSrc = "img/protagonista.jpg";
+        break;
+    }
+
+    panel.querySelector('p').textContent = texto;
+    panel.querySelector('img').src = imgSrc;
+  });
+});

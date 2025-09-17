@@ -307,3 +307,25 @@ audio {
     width: 100%;
   }
 }
+
+.analisis-tabs .tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.tab-btn {
+  padding: 8px 12px;
+  border: none;
+  background-color: #ddd;
+  cursor: pointer;
+}
+.tab-btn.active {
+  background-color: #aaa;
+  font-weight: bold;
+}
+.tab-content .tab-panel {
+  display: none;
+}
+.tab-content .tab-panel.active {
+  display: block;
+}
