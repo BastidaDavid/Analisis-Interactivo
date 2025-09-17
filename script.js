@@ -42,13 +42,13 @@ let isEnglish = true;
 const tabButtons = document.querySelectorAll('.tab-btn');
 const tabPanels = document.querySelectorAll('.tab-panel');
 
-const textosTabs = {
-  "tab-estetica": { en: "Visual Aesthetics", es: "Estética Visual" },
-  "tab-ocularizacion": { en: "Ocularization", es: "Ocularización" },
-  "tab-relato": { en: "Story Structure", es: "Estructura del Relato" },
-  "tab-interaccion": { en: "Interaction", es: "Interacción" },
-  "tab-sonido": { en: "Sound", es: "Sonido" },
-  "tab-protagonista": { en: "Protagonist", es: "Protagonista" }
+const textosTabsContenido = {
+  "tab-estetica": { en: "For me, This VR experience combines narrative storytelling with interactive elements.", es: "Para mi , esta experiencia VR combina la narración con elementos interactivos." },
+  "tab-ocularizacion": { en: "Presented in first person, immersing the user as the protagonist.", es: "Se presenta en primera persona, haciendo que el usuario viva la experiencia como protagonista." },
+  "tab-relato": { en: "The narrative is linear, following the prisoner's routine step by step.", es: "El relato es lineal: seguimos la rutina del prisionero dentro de la celda paso a paso." },
+  "tab-interaccion": { en: "The user can explore the cell, interact with objects, and hear diegetic sounds.", es: "El usuario puede explorar la celda, interactuar con objetos y escuchar sonidos diegéticos del entorno." },
+  "tab-sonido": { en: "Ambient sound and ex-prisoner dialogues reinforce immersion.", es: "Sonido ambiental y diálogos de ex-prisioneros refuerzan la inmersión y la atmósfera emocional." },
+  "tab-protagonista": { en: "The user is the protagonist, experiencing the VR in first person.", es: "El usuario es el protagonista, viviendo la experiencia en primera persona dentro de la celda." }
 };
 
 // Función para actualizar los botones de tabs según el idioma
@@ -94,12 +94,7 @@ document.getElementById("medio-info").textContent = isEnglish ? datos.medioInfo.
   document.getElementById("boton-experiencia").textContent = isEnglish ? "Go to the Experience" : "Ir a la Experiencia";
 
   updateTabButtons();
-  
-// Inicializar contenido al cargar la página
-// 1️⃣ Inicializar contenido al cargar la página
-updateLanguage();
-
-// 2️⃣ Botón de cambiar idioma
+//cambiar idioma
 const langBtn = document.getElementById("toggleLang");
 langBtn.addEventListener("click", () => {
   isEnglish = !isEnglish;
@@ -107,16 +102,16 @@ langBtn.addEventListener("click", () => {
   langBtn.textContent = isEnglish ? "🌐 Español" : "🌐 English";
 });
 
-// 3️⃣ Manejo de click en tabs
+// 3️⃣ tabs
 tabButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     tabButtons.forEach(b => b.classList.remove('active'));
     tabPanels.forEach(p => p.classList.remove('active'));
 
     btn.classList.add('active');
-    const panel = document.getElementById(btn.dataset.target);
-    panel.classList.add('active');
-
+    document.getElementById(btn.dataset.target).classList.add('active');
+  });
+});
     // Cambiar texto de ese panel según idioma
     const key = btn.dataset.target.replace('tab-', '');
     let texto = "";
@@ -142,8 +137,7 @@ tabButtons.forEach(btn => {
     }
 
     panel.querySelector('p').textContent = texto;
-  });
-});
+  }
 
 // 4️⃣ Manejo de click en toggles (definir solo una vez, fuera de updateLanguage)
 document.querySelectorAll('.toggle-btn').forEach(btn => {
@@ -168,11 +162,9 @@ document.querySelectorAll('.toggle-btn').forEach(btn => {
 });
 
 
-}
+
 const audio = document.getElementById('audio');
 document.getElementById('playAudio').addEventListener('click', () => audio.play());
+window.addEventListener('load', () => audio.play().catch(err => console.log('Autoplay blocked', err)));
 
-// Si quieres autoplay al cargar
-window.addEventListener('load', () => {
-  audio.play().catch(err => console.log('Autoplay blocked', err));
-});
+updateLanguage();
