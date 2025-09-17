@@ -83,11 +83,10 @@ function updateLanguage() {
   document.getElementById('formato').textContent = datos.formato;
   document.getElementById('url').href = datos.url;
 
-  // 4️⃣ Contenido de Plot, Reflexión y análisis
-  document.getElementById("argumento").textContent = isEnglish ? datos.argumento.en : datos.argumento.es;
-  document.getElementById("reflexion").textContent = isEnglish ? datos.reflexion.en : datos.reflexion.es;
-  document.getElementById("analisis").textContent = isEnglish ? datos.analisis.en : datos.analisis.es;
-
+  // 4️⃣ Contenido de Plot, Reflexión y Medio info
+document.getElementById("argumento").textContent = isEnglish ? datos.argumento.en : datos.argumento.es;
+document.getElementById("reflexion").textContent = isEnglish ? datos.reflexion.en : datos.reflexion.es;
+document.getElementById("medio-info").textContent = isEnglish ? datos.medioInfo.en : datos.medioInfo.es;
   // 5️⃣ Medio info resumida
   document.getElementById("medio-info").textContent = isEnglish ? datos.medioInfo.en : datos.medioInfo.es;
 
