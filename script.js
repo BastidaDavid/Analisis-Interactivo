@@ -1,8 +1,7 @@
-const datos = 
-{
+const datos = {
   nombre: "6x9: A Virtual Experience of Solitary Confinement",
   anio: "2016",
-  medio: "The Guardian – British newspaper known for independent journalism",
+  medio: "The Guardian\nBritish newspaper known for independent journalism",
   formato: "Realidad Virtual / 360°",
   url: "https://www.theguardian.com/world/ng-interactive/2016/apr/27/6x9-a-virtual-experience-of-solitary-confinement#gvr-360",
   argumento: {
