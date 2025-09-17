@@ -7,6 +7,7 @@
 </head>
 <body>
 
+<button id="toggleLang">🌐 Español</button>
 
 <div class="container">
 
@@ -76,5 +77,63 @@
 </div>
 
 <script src="script.js"></script>
+<script>
+    const langBtn = document.getElementById("toggleLang");
+    let isEnglish = true;
+
+    langBtn.addEventListener("click", () => {
+      if (isEnglish) {
+        document.querySelector("h1").textContent = "Ficha de la Experiencia Interactiva";
+        document.querySelector(".info p:nth-child(1) strong").textContent = "Nombre:";
+        document.querySelector(".info p:nth-child(2) strong").textContent = "Año de creación:";
+        document.querySelector(".info p:nth-child(3) strong").textContent = "Medio:";
+        document.querySelector(".info p:nth-child(4) strong").textContent = "Formato:";
+        document.querySelector(".info p:nth-child(5) strong").textContent = "URL:";
+        document.querySelector(".info a").textContent = "Ver experiencia";
+
+        document.querySelector(".video h2").textContent = "Video de la Experiencia";
+
+        document.querySelector(".medio-box h2").textContent = "The Guardian";
+        document.querySelector(".medio-box button").textContent = "Mostrar info";
+        document.getElementById("medio-info").textContent = "Aquí puedes poner información sobre el medio, historia, objetivos, etc.";
+
+        document.querySelector(".argumento-box h2").textContent = "Argumento";
+        document.querySelector(".argumento-box button").textContent = "Mostrar argumento";
+
+        document.querySelector(".reflexion-box h2").textContent = "Reflexión Final";
+        document.querySelector(".reflexion-box button").textContent = "Mostrar reflexión";
+
+        document.querySelector(".juego button").textContent = "Ir a la Experiencia";
+
+        langBtn.textContent = "🌐 English";
+        isEnglish = false;
+      } else {
+        document.querySelector("h1").textContent = "Interactive Experience Sheet";
+        document.querySelector(".info p:nth-child(1) strong").textContent = "Name:";
+        document.querySelector(".info p:nth-child(2) strong").textContent = "Year of creation:";
+        document.querySelector(".info p:nth-child(3) strong").textContent = "Media:";
+        document.querySelector(".info p:nth-child(4) strong").textContent = "Format:";
+        document.querySelector(".info p:nth-child(5) strong").textContent = "URL:";
+        document.querySelector(".info a").textContent = "View experience";
+
+        document.querySelector(".video h2").textContent = "Experience Video";
+
+        document.querySelector(".medio-box h2").textContent = "The Guardian";
+        document.querySelector(".medio-box button").textContent = "Show info";
+        document.getElementById("medio-info").textContent = "Here you can add information about the media, history, objectives, etc.";
+
+        document.querySelector(".argumento-box h2").textContent = "Plot";
+        document.querySelector(".argumento-box button").textContent = "Show plot";
+
+        document.querySelector(".reflexion-box h2").textContent = "Final Reflection";
+        document.querySelector(".reflexion-box button").textContent = "Show reflection";
+
+        document.querySelector(".juego button").textContent = "Go to the Experience";
+
+        langBtn.textContent = "🌐 Español";
+        isEnglish = true;
+      }
+    });
+  </script>
 </body>
 </html>
