@@ -52,11 +52,16 @@ const textosTabs = {
 const textosTabsContenido = {
   "tab-estetica": { en: "This is a computer-generated 3D experience of a small prison cell. It is set in a dark environment with muted colors to convey a sense of isolation, making the user feel the claustrophobia of the prison, combined with the narrative of former prisoners.", 
     es:"Esta es una experiencia 3D generada por computadora de una pequeña celda de prisión. Se mantiene en un ambiente oscuro y con colores apagados para transmitir la sensación de aislamiento, haciendo que el usuario sienta la claustrofobia de la prisión, junto con la narrativa de ex-prisioneros." },
-  "tab-ocularizacion": { en: "Presented in first person, immersing the user as the protagonist.", es: "Se presenta en primera persona, haciendo que el usuario viva la experiencia como protagonista." },
-  "tab-relato": { en: "The narrative is linear, following the prisoner's routine step by step.", es: "El relato es lineal: seguimos la rutina del prisionero dentro de la celda paso a paso." },
-  "tab-interaccion": { en: "The user can explore the cell, interact with objects, and hear diegetic sounds.", es: "El usuario puede explorar la celda, interactuar con objetos y escuchar sonidos diegéticos del entorno." },
-  "tab-sonido": { en: "Ambient sound and ex-prisoner dialogues reinforce immersion.", es: "Sonido ambiental y diálogos de ex-prisioneros refuerzan la inmersión y la atmósfera emocional." },
-  "tab-protagonista": { en: "The user is the protagonist, experiencing the VR in first person.", es: "El usuario es el protagonista, viviendo la experiencia en primera persona dentro de la celda." }
+  "tab-ocularizacion": { en: "The experience is in first person, placing the user directly inside the cell and allowing them to feel the perspective and sense of isolation. This first-person view makes the experience more immersive and emotionally engaging.", 
+    es: "La experiencia es en primera persona y sitúa al usuario directamente dentro de la celda, permitiéndole experimentar la perspectiva y la sensación de aislamiento. Esta visión en primera persona hace que la experiencia sea más inmersiva y emocionalmente intensa." },
+  "tab-relato": { en: "This experience has a linear narrative structure, following a chronological order. The user observes and goes through a prisoner’s routine as it happens in real life, creating a sense of repetition and monotony.", 
+    es: "Esta experiencia tiene una estructura de relato lineal, ya que sigue un orden cronológico. El usuario observa y atraviesa la rutina de un prisionero tal como ocurre en la vida real, generando una sensación de repetición y monotonía." },
+  "tab-interaccion": { en: "The user can explore the cell, interact with certain objects, and hear environmental sounds, enhancing the immersive experience.", 
+    es: "El usuario puede explorar la celda, interactuar con algunos objetos y escuchar los sonidos del entorno, lo que refuerza la inmersión en la experiencia." },
+  "tab-sonido": { en: "Ambient sounds and ex-prisoner dialogues enhance the sense of isolation and deepen the user’s immersion.", 
+    es: "El sonido ambiental y los diálogos de los ex-prisioneros refuerzan la atmósfera de aislamiento y aumentan la inmersión del usuario." },
+  "tab-protagonista": { en: "The user is the protagonist, experiencing the cell in first person and feeling the pressure and isolation it entails.", 
+    es: "El usuario es el protagonista de la experiencia, viviendo la celda en primera persona y sintiendo la presión y el aislamiento que esto conlleva." }
 };
 
 // Función para actualizar los botones de tabs
