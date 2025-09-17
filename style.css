@@ -329,3 +329,13 @@ audio {
 .tab-content .tab-panel.active {
   display: block;
 }
+
+#titulo-analisis {
+  margin-top: 0;        /* elimina espacio arriba */
+  margin-bottom: 10px;  /* reduce espacio debajo del título */
+  font-size: 24px;      /* opcional: ajusta tamaño */
+}
+
+.analisis-tabs .tabs {
+  margin-bottom: 15px;  /* espacio entre tabs y contenido */
+}
