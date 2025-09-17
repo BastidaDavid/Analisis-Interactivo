@@ -125,9 +125,10 @@ document.querySelectorAll('.toggle-btn').forEach(btn => {
 });
 
 // Inicializar contenido al cargar la página
+// 1️⃣ Inicializar contenido al cargar la página
 updateLanguage();
 
-// Botón de cambiar idioma
+// 2️⃣ Botón de cambiar idioma
 const langBtn = document.getElementById("toggleLang");
 langBtn.addEventListener("click", () => {
   isEnglish = !isEnglish;
@@ -135,14 +136,12 @@ langBtn.addEventListener("click", () => {
   langBtn.textContent = isEnglish ? "🌐 Español" : "🌐 English";
 });
 
-// Manejo de click en tabs
+// 3️⃣ Manejo de click en tabs
 tabButtons.forEach(btn => {
   btn.addEventListener('click', () => {
-    // Desactivar todos
     tabButtons.forEach(b => b.classList.remove('active'));
     tabPanels.forEach(p => p.classList.remove('active'));
 
-    // Activar el seleccionado
     btn.classList.add('active');
     const panel = document.getElementById(btn.dataset.target);
     panel.classList.add('active');
@@ -153,32 +152,47 @@ tabButtons.forEach(btn => {
     switch(key) {
       case 'estetica':
         texto = isEnglish ? "For me, This VR experience combines narrative storytelling with interactive elements." : "Para mi , esta experiencia VR combina la narración con elementos interactivos.";
-      
         break;
       case 'ocularizacion':
-       
-      texto = isEnglish ? "Presented in first person, immersing the user as the protagonist." : "Se presenta en primera persona, haciendo que el usuario viva la experiencia como protagonista.";
+        texto = isEnglish ? "Presented in first person, immersing the user as the protagonist." : "Se presenta en primera persona, haciendo que el usuario viva la experiencia como protagonista.";
         break;
       case 'relato':
-      
-      texto = isEnglish ? "The narrative is linear, following the prisoner's routine step by step." : "El relato es lineal: seguimos la rutina del prisionero dentro de la celda paso a paso.";
+        texto = isEnglish ? "The narrative is linear, following the prisoner's routine step by step." : "El relato es lineal: seguimos la rutina del prisionero dentro de la celda paso a paso.";
         break;
       case 'interaccion':
-      
-      texto = isEnglish ? "The user can explore the cell, interact with objects, and hear diegetic sounds." : "El usuario puede explorar la celda, interactuar con objetos y escuchar sonidos diegéticos del entorno.";
+        texto = isEnglish ? "The user can explore the cell, interact with objects, and hear diegetic sounds." : "El usuario puede explorar la celda, interactuar con objetos y escuchar sonidos diegéticos del entorno.";
         break;
       case 'sonido':
-      
-      texto = isEnglish ? "Ambient sound and ex-prisoner dialogues reinforce immersion." : "Sonido ambiental y diálogos de ex-prisioneros refuerzan la inmersión y la atmósfera emocional.";
+        texto = isEnglish ? "Ambient sound and ex-prisoner dialogues reinforce immersion." : "Sonido ambiental y diálogos de ex-prisioneros refuerzan la inmersión y la atmósfera emocional.";
         break;
       case 'protagonista':
-      
-      texto = isEnglish ? "The user is the protagonist, experiencing the VR in first person." : "El usuario es el protagonista, viviendo la experiencia en primera persona dentro de la celda.";
+        texto = isEnglish ? "The user is the protagonist, experiencing the VR in first person." : "El usuario es el protagonista, viviendo la experiencia en primera persona dentro de la celda.";
         break;
     }
 
     panel.querySelector('p').textContent = texto;
+  });
+});
 
+// 4️⃣ Manejo de click en toggles (definir solo una vez, fuera de updateLanguage)
+document.querySelectorAll('.toggle-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const targetId = btn.getAttribute('data-target');
+    const target = document.getElementById(targetId);
+
+    // Alternar clases
+    target.classList.toggle('mostrar');
+    target.classList.toggle('oculto');
+
+    // Actualizar texto del botón según idioma
+    btn.textContent = target.classList.contains('mostrar') 
+      ? (isEnglish ? `Hide ${btn.previousElementSibling.textContent}` : `Ocultar ${btn.previousElementSibling.textContent}`) 
+      : (isEnglish ? `Show ${btn.previousElementSibling.textContent}` : `Mostrar ${btn.previousElementSibling.textContent}`);
+
+    // Mantener texto actualizado según idioma
+    if(targetId === "medio-info") target.textContent = isEnglish ? datos.medioInfo.en : datos.medioInfo.es;
+    if(targetId === "argumento") target.textContent = isEnglish ? datos.argumento.en : datos.argumento.es;
+    if(targetId === "reflexion") target.textContent = isEnglish ? datos.reflexion.en : datos.reflexion.es;
   });
 });
 
