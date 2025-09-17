@@ -61,8 +61,48 @@ function updateTabButtons() {
 
 // Función para actualizar todo el contenido
 function updateLanguage() {
-  // ...tu código para actualizar títulos, contenido, reflexiones, análisis, etc.
+  // 1️⃣ Títulos
+  document.getElementById("titulo-principal").textContent = isEnglish ? "Interactive Experience Sheet" : "Ficha de la Experiencia Interactiva";
+  document.getElementById("titulo-video").textContent = isEnglish ? "Experience Video" : "Video de la Experiencia";
+  document.getElementById("titulo-medio").textContent = "The Guardian";
+  document.getElementById("titulo-plot").textContent = isEnglish ? "Plot" : "Argumento";
+  document.getElementById("titulo-reflexion").textContent = isEnglish ? "Final Reflection" : "Reflexión Final";
+
+  // 2️⃣ Etiquetas de la ficha
+  document.getElementById("nombre-label").textContent = isEnglish ? "Name:" : "Nombre:";
+  document.getElementById("anio-label").textContent = isEnglish ? "Year of creation:" : "Año de creación:";
+  document.getElementById("medio-label").textContent = isEnglish ? "Media:" : "Medio:";
+  document.getElementById("formato-label").textContent = isEnglish ? "Format:" : "Formato:";
+  document.getElementById("url-label").textContent = "URL:";
+  document.getElementById("url").textContent = isEnglish ? "View experience" : "Ver experiencia";
+
+  // 3️⃣ Valores de la ficha
+  document.getElementById('nombre').textContent = datos.nombre;
+  document.getElementById('anio').textContent = datos.anio;
+  document.getElementById('medio').textContent = isEnglish ? datos.medio.en : datos.medio.es;
+  document.getElementById('formato').textContent = datos.formato;
+  document.getElementById('url').href = datos.url;
+
+  // 4️⃣ Contenido de Plot, Reflexión y análisis
+  document.getElementById("argumento").textContent = isEnglish ? datos.argumento.en : datos.argumento.es;
+  document.getElementById("reflexion").textContent = isEnglish ? datos.reflexion.en : datos.reflexion.es;
+  document.getElementById("analisis").textContent = isEnglish ? datos.analisis.en : datos.analisis.es;
+
+  // 5️⃣ Medio info resumida
+  document.getElementById("medio-info").textContent = isEnglish ? datos.medioInfo.en : datos.medioInfo.es;
+
+  // 6️⃣ Botones y tabs
+  document.getElementById("boton-experiencia").textContent = isEnglish ? "Go to the Experience" : "Ir a la Experiencia";
+
   updateTabButtons();
+
+  // Toggle info buttons
+  document.querySelectorAll('.toggle-btn').forEach(btn => {
+    const targetId = btn.getAttribute('data-target');
+    btn.textContent = document.getElementById(targetId).classList.contains('mostrar') 
+      ? (isEnglish ? `Hide ${targetId.replace("-", " ")}` : `Ocultar ${targetId.replace("-", " ")}`)
+      : (isEnglish ? `Show ${targetId.replace("-", " ")}` : `Mostrar ${targetId.replace("-", " ")}`);
+  });
 }
 
 // Inicializar contenido al cargar la página
