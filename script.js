@@ -26,16 +26,33 @@ toggleButtons.forEach(btn => {
     const targetId = btn.getAttribute('data-target');
     const target = document.getElementById(targetId);
 
-    // Mostrar u ocultar contenido
+
     target.classList.toggle('mostrar');
     target.classList.toggle('oculto');
 
-    // Cambiar texto del botón
-    btn.textContent = target.classList.contains('mostrar') ? 
-                      `Ocultar ${targetId}` : 
-                      `Mostrar ${targetId}`;
 
-    // Hacer scroll suave hasta el contenido
+    btn.textContent = target.classList.contains('mostrar') ? 
+                      `Ocultar ${targetId.replace("-", " ")}` : 
+                      `Mostrar ${targetId.replace("-", " ")}`;
+                      
+
     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
+});
+
+// ========================
+// Reproducción de audio
+const audio = document.getElementById('audio');
+
+// Intentar reproducir automáticamente al cargar la página
+window.addEventListener('load', () => {
+  audio.play().catch(err => {
+    console.log('Autoplay bloqueado, el usuario debe hacer click para escuchar.', err);
+  });
+});
+
+// Botón para reproducir audio si el navegador bloquea autoplay
+const btnPlayAudio = document.getElementById('playAudio');
+btnPlayAudio.addEventListener('click', () => {
+  audio.play();
 });
