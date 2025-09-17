@@ -94,36 +94,7 @@ document.getElementById("medio-info").textContent = isEnglish ? datos.medioInfo.
   document.getElementById("boton-experiencia").textContent = isEnglish ? "Go to the Experience" : "Ir a la Experiencia";
 
   updateTabButtons();
-
-  // Toggle show/hide para The Guardian, Plot y Reflection (definir solo una vez)
-document.querySelectorAll('.toggle-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const targetId = btn.getAttribute('data-target');
-    const target = document.getElementById(targetId);
-
-    // Alternar clases
-    target.classList.toggle('mostrar');
-    target.classList.toggle('oculto');
-
-    // Actualizar texto del botón según idioma y el estado del panel
-    btn.textContent = target.classList.contains('mostrar') 
-      ? (isEnglish 
-          ? `Hide ${btn.previousElementSibling.textContent}` 
-          : `Ocultar ${btn.previousElementSibling.textContent}`) 
-      : (isEnglish 
-          ? `Show ${btn.previousElementSibling.textContent}` 
-          : `Mostrar ${btn.previousElementSibling.textContent}`);
-
-    // Mantener texto actualizado según idioma
-    if(targetId === "medio-info") target.textContent = isEnglish ? datos.medioInfo.en : datos.medioInfo.es;
-    if(targetId === "argumento") target.textContent = isEnglish ? datos.argumento.en : datos.argumento.es;
-    if(targetId === "reflexion") target.textContent = isEnglish ? datos.reflexion.en : datos.reflexion.es;
-
-    // Hacer scroll al contenido mostrado (opcional)
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
-});
-
+  
 // Inicializar contenido al cargar la página
 // 1️⃣ Inicializar contenido al cargar la página
 updateLanguage();
@@ -198,3 +169,10 @@ document.querySelectorAll('.toggle-btn').forEach(btn => {
 
 
 }
+const audio = document.getElementById('audio');
+document.getElementById('playAudio').addEventListener('click', () => audio.play());
+
+// Si quieres autoplay al cargar
+window.addEventListener('load', () => {
+  audio.play().catch(err => console.log('Autoplay blocked', err));
+});

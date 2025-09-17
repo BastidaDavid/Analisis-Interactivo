@@ -137,84 +137,14 @@
 
 </div>
 
-<script src="script.js"></script>
-<script>
-const langBtn = document.getElementById("toggleLang");
-let isEnglish = true;
 
-function updateLanguage() {
-  // Titles
-  document.getElementById("titulo-principal").textContent = isEnglish ? "Interactive Experience Sheet" : "Ficha de la Experiencia Interactiva";
-  document.getElementById("titulo-video").textContent = isEnglish ? "Experience Video" : "Video de la Experiencia";
-  document.getElementById("titulo-medio").textContent = "The Guardian";
-  document.getElementById("titulo-plot").textContent = isEnglish ? "Plot" : "Argumento";
-  document.getElementById("titulo-reflexion").textContent = isEnglish ? "Final Reflection" : "Reflexión Final";
-
-  // Main info
-  document.getElementById("nombre-label").textContent = isEnglish ? "Name:" : "Nombre:";
-  document.getElementById("anio-label").textContent = isEnglish ? "Year of creation:" : "Año de creación:";
-  document.getElementById("medio-label").textContent = isEnglish ? "Media:" : "Medio:";
-  document.getElementById("formato-label").textContent = isEnglish ? "Format:" : "Formato:";
-  document.getElementById("url-label").textContent = "URL:";
-  document.getElementById("url").textContent = isEnglish ? "View experience" : "Ver experiencia";
-
-  // Plot & Reflection
-  document.getElementById("argumento").textContent = isEnglish ? datos.argumento.en : datos.argumento.es;
-  document.getElementById("reflexion").textContent = isEnglish ? datos.reflexion.en : datos.reflexion.es;
-
-  // Medio info
-  document.getElementById("medio-info").textContent = isEnglish 
-    ? "The Guardian is a British newspaper founded in 1821, recognized worldwide for its independent journalism, investigative reporting, and progressive editorial stance."
-    : "The Guardian es un periódico británico fundado en 1821, reconocido mundialmente por su periodismo independiente, reportajes de investigación y postura editorial progresista.";
-
-  // Button
-  document.getElementById("boton-experiencia").textContent = isEnglish ? "Go to the Experience" : "Ir a la Experiencia";
-
-  // Toggle info buttons
-  document.querySelectorAll('.toggle-btn').forEach(btn => {
-    const targetId = btn.getAttribute('data-target');
-    btn.textContent = document.getElementById(targetId).classList.contains('mostrar') 
-      ? (isEnglish ? `Hide ${targetId.replace("-", " ")}` : `Ocultar ${targetId.replace("-", " ")}`)
-      : (isEnglish ? `Show ${targetId.replace("-", " ")}` : `Mostrar ${targetId.replace("-", " ")}`);
-  });
-}
-
-// Initialize content
-updateLanguage();
-
-// Language toggle
-langBtn.addEventListener("click", () => {
-  isEnglish = !isEnglish;
-  updateLanguage();
-  langBtn.textContent = isEnglish ? "🌐 Español" : "🌐 English";
-});
-
-// Toggle show/hide content
-document.querySelectorAll('.toggle-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const targetId = btn.getAttribute('data-target');
-    const target = document.getElementById(targetId);
-    target.classList.toggle('mostrar');
-    target.classList.toggle('oculto');
-    btn.textContent = target.classList.contains('mostrar') 
-      ? (isEnglish ? `Hide ${targetId.replace("-", " ")}` : `Ocultar ${targetId.replace("-", " ")}`)
-      : (isEnglish ? `Show ${targetId.replace("-", " ")}` : `Mostrar ${targetId.replace("-", " ")}`);
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
-});
-
-// Audio autoplay
-const audio = document.getElementById('audio');
-window.addEventListener('load', () => {
-  audio.play().catch(err => console.log('Autoplay blocked', err));
-});
-document.getElementById('playAudio').addEventListener('click', () => audio.play());
-</script>
 
 <!-- Footer -->
 <footer class="footer">
   <p>© 2025 David Ramírez Bastida - Multimedia Designer</p>
 </footer>
-
+<!-- Al final del body, antes del cierre de </body> -->
+<script src="script.js"></script>
 </body>
+
 </html>
