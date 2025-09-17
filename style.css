@@ -346,3 +346,13 @@ audio {
 .tab-content .tab-panel p {
   line-height: 1.4; /* más compacto */
 }
+
+.tab-panel img {
+  max-width: 300px;   /* limita el ancho máximo */
+  width: 100%;        /* se adapta al contenedor */
+  height: auto;       /* mantiene la proporción */
+  display: block;     /* evita alineación rara */
+  margin: 10px auto;  /* centra y da espacio */
+  border-radius: 12px; /* esquinas redondeadas */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2); /* sombra ligera */
+}
