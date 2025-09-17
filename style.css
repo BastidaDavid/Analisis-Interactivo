@@ -228,3 +228,20 @@ audio {
 .medio-box p {
   line-height: 1.5;
 }
+#playAudio {
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4dabf7, #74c0fc);
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#playAudio:hover {
+  transform: scale(1.1);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+}
