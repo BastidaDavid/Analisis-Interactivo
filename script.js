@@ -57,11 +57,3 @@ const btnPlayAudio = document.getElementById('playAudio');
 btnPlayAudio.addEventListener('click', () => {
   audio.play();
 });
-
-// Intentar reproducir audio automáticamente al cargar la página
-window.addEventListener('load', () => {
-  const audio = document.getElementById('audio');
-  audio.play().catch(err => {
-    console.log('Autoplay bloqueado, el usuario debe hacer click para escuchar.', err);
-  });
-});
