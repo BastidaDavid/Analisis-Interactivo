@@ -349,7 +349,7 @@ audio {
 
 .tab-panel img {
   max-width: 300px;   /* limita el ancho máximo */
-  width: 300%;        /* se adapta al contenedor */
+  width: 100%;        /* se adapta al contenedor */
   height: auto;       /* mantiene la proporción */
   display: block;     /* evita alineación rara */
   margin: 10px auto;  /* centra y da espacio */
@@ -376,14 +376,14 @@ audio {
 
 .slider {
   position: relative;
-  width: 100%;
+  width: 300%;
   max-width: 500px; /* ajusta el tamaño */
   height: auto;
   overflow: hidden;
 }
 
 .slider img {
-  width: 200%;
+  width: 300%;
   display: none;
   border-radius: 10px;
 }
