@@ -173,7 +173,7 @@ function iniciarSlider() {
       slides[index].classList.remove("active");
       index = (index + 1) % slides.length;
       slides[index].classList.add("active");
-    }, 4000); // cambia cada 3 segundos
+    }, 5000); // cambia cada 5 segundos
   });
 }
 
