@@ -47,6 +47,12 @@ const textosTabs = {
   "tab-protagonista": { en: "Protagonist", es: "Protagonista" }
 };
 
+// Dentro de updateLanguage()
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  const target = btn.getAttribute('data-target');
+  btn.textContent = isEnglish ? textosTabs[target].en : textosTabs[target].es;
+});
+
 // ========================
 // Función para actualizar el contenido según el idioma
 function updateLanguage() {
