@@ -38,6 +38,14 @@ En conjunto, la pieza demuestra cómo la tecnología inmersiva  mejora la narrac
 };
 
 let isEnglish = true;
+const textosTabs = {
+  "tab-estetica": { en: "Visual Aesthetics", es: "Estética Visual" },
+  "tab-ocularizacion": { en: "Ocularization", es: "Ocularización" },
+  "tab-relato": { en: "Story Structure", es: "Estructura del Relato" },
+  "tab-interaccion": { en: "Interaction", es: "Interacción" },
+  "tab-sonido": { en: "Sound", es: "Sonido" },
+  "tab-protagonista": { en: "Protagonist", es: "Protagonista" }
+};
 
 // ========================
 // Función para actualizar el contenido según el idioma
@@ -55,18 +63,23 @@ function updateLanguage() {
   document.getElementById("argumento").textContent = isEnglish ? datos.argumento.en : datos.argumento.es;
   document.getElementById("reflexion").textContent = isEnglish ? datos.reflexion.en : datos.reflexion.es;
 
-// Análisis
-document.getElementById("analisis").textContent = isEnglish ? datos.analisis.en : datos.analisis.es;
-document.getElementById("titulo-analisis").textContent = isEnglish ? "Analysis" : "Análisis";
+  // Análisis
+  document.getElementById("analisis").textContent = isEnglish ? datos.analisis.en : datos.analisis.es;
+  document.getElementById("titulo-analisis").textContent = isEnglish ? "Analysis" : "Análisis";
 
-  // Actualizar títulos
+  // Actualizar títulos principales
   document.getElementById("titulo-principal").textContent = isEnglish ? "Interactive Experience Sheet" : "Ficha de la Experiencia Interactiva";
   document.getElementById("titulo-video").textContent = isEnglish ? "Experience Video" : "Video de la Experiencia";
-
+ 
   document.getElementById("titulo-plot").textContent = isEnglish ? "Plot" : "Argumento";
   document.getElementById("titulo-reflexion").textContent = isEnglish ? "Final Reflection" : "Reflexión Final";
-}
 
+  // ======== NUEVO: actualizar botones de tabs ========
+  tabButtons.forEach(btn => {
+    const target = btn.dataset.target;
+    btn.textContent = isEnglish ? textosTabs[target].en : textosTabs[target].es;
+  });
+}
 // Inicializar contenido al cargar la página
 updateLanguage();
 
