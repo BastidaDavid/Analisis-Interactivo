@@ -278,19 +278,32 @@ audio {
 }
 
 .analisis-item {
+  margin-bottom: 30px;
+}
+
+.analisis-content {
   display: flex;
-  align-items: flex-start; /* Alinea texto e imagen al inicio */
-  gap: 20px; /* Espacio entre texto e imagen */
-  margin-bottom: 30px; 
+  align-items: flex-start;
+  gap: 20px; /* espacio entre texto e imagen */
 }
 
-.analisis-item p {
-  flex: 1; /* El texto ocupa todo el espacio disponible */
+.analisis-content p {
+  flex: 1; /* texto ocupa todo el espacio disponible */
 }
 
-.analisis-item img {
-  width: 250px; /* Ajusta tamaño de la imagen */
+.analisis-content img {
+  width: 250px; /* tamaño de la imagen */
   height: auto;
-  border-radius: 8px; /* Opcional: esquinas redondeadas */
+  border-radius: 8px;
   object-fit: cover;
+}
+
+/* Responsive: en móviles texto arriba, imagen abajo */
+@media (max-width: 768px) {
+  .analisis-content {
+    flex-direction: column;
+  }
+  .analisis-content img {
+    width: 100%;
+  }
 }
