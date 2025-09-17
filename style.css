@@ -356,3 +356,20 @@ audio {
   border-radius: 12px; /* esquinas redondeadas */
   box-shadow: 0 2px 6px rgba(0,0,0,0.2); /* sombra ligera */
 }
+
+.panel-contenido {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.panel-contenido p {
+  flex: 1;
+}
+
+.panel-contenido img {
+  max-width: 40%;
+  height: auto;
+  border-radius: 10px;
+}
