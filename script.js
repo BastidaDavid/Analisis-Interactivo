@@ -92,3 +92,4 @@ const btnPlayAudio = document.getElementById('playAudio');
 btnPlayAudio.addEventListener('click', () => {
   audio.play();
 });
+target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });

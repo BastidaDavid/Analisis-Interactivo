@@ -94,9 +94,13 @@ button:hover {
   opacity: 0;
   transition: all 0.6s ease;
 }
+
 .mostrar {
-  max-height: 500px; /* suficiente para párrafos largos */
+  max-height: 300px; /* altura máxima */
+  overflow-y: auto;  /* scroll interno si el contenido es mayor */
   opacity: 1;
+  transition: all 0.6s ease;
+  padding-right: 10px; /* opcional, para el scroll */
 }
 
 /* ======================= */
