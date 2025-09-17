@@ -1,9 +1,9 @@
 const datos = {
   nombre: "6x9: A Virtual Experience of Solitary Confinement",
   anio: "2016",
-  medioInfo: {
-    en: "The Guardian is a British newspaper founded in 1821, recognized worldwide for its independent journalism, investigative reporting, and progressive editorial stance.",
-    es: "The Guardian es un periódico británico fundado en 1821, reconocido mundialmente por su periodismo independiente, reportajes de investigación y postura editorial progresista."
+  medio: {
+    en: "The Guardian\nBritish newspaper known for independent journalism",
+    es: "The Guardian\nPeriódico británico reconocido por su periodismo independiente"
   },
   formato: "Realidad Virtual / 360°",
   url: "https://www.theguardian.com/world/ng-interactive/2016/apr/27/6x9-a-virtual-experience-of-solitary-confinement#gvr-360",
@@ -16,87 +16,63 @@ const datos = {
     es: "El proyecto se desarrolló para visibilizar las consecuencias psicológicas y emocionales del confinamiento solitario. Usando VR, The Guardian permite a los participantes experimentar el aislamiento extremo en primera persona, transformando estadísticas abstractas en vivencias personales. Este enfoque de narrativa demuestra cómo el periodismo puede ir más allá del texto, generando empatía y comprensión. Invita a reflexionar sobre las dimensiones éticas de las prácticas penitenciarias, las implicaciones en la salud mental de los internos y la responsabilidad de la sociedad. La experiencia desafía a considerar el equilibrio entre seguridad, castigo y humanidad, mostrando el poder de la tecnología inmersiva para concienciar, provocar pensamiento crítico y fomentar una conexión más profunda con los derechos humanos."
   },
   analisis: {
-    en: `For me, This VR experience combines narrative storytelling with interactive elements. 
-The narrative unfolds through environmental details, sound design, and the testimonies of former prisoners, immersing the user in the emotional and psychological atmosphere of the prison. 
-Interactivity allows the user to explore the cell at their own pace, creating a sense of agency while emphasizing isolation in a small space. 
-The combination of audio, visual cues, and movement engages multiple sensory senses, reinforcing empathy and understanding of the narrative. 
-Overall, the piece demonstrates how immersive technology enhances journalistic storytelling by merging reporting with experiential immersion.`,
-    es: `Para mí, esta experiencia VR combina la narración con elementos interactivos. 
-La narrativa se desarrolla a través de los detalles del entorno, el sonido y los testimonios de ex-prisioneros, sumergiendo al usuario en la atmósfera emocional y psicológica de la prisión. 
-La interactividad permite al usuario explorar la celda a su propio ritmo, creando una sensación de control mientras se encuentra en aislamiento en un espacio reducido. 
-La combinación de audio, señales visuales y movimiento involucra múltiples sentidos, reforzando la empatía y la comprensión de la narrativa. 
-En conjunto, la pieza demuestra cómo la tecnología inmersiva mejora la narración periodística al fusionar reportajes con experiencias inmersivas.`
-  }
+  en: `For me, This VR experience combines narrative storytelling with interactive elements. 
+The narrative unfolds through environmental details, sound design, and the testimonies of former prisoners, immersing the user in the emotional and psychological atmosphere of the prision. 
+Interactivity allows the user to explore the cell at their own pace, creating a sense of agency while emphasizing isolation in a bit place. 
+The combination of audio, visual cues, and movement engages multiple sensorial senses, reinforcing empathy and understanding of the narrative. 
+Overall, the piece demonstrates how immersive technology enhance journalistic storytelling by merging reporting with experiential immersion.`,
+  
+  es: `Para mi , esta experiencia VR combina la narración con elementos interactivos. 
+La narrativa se desarrolla a través de los detalles del entorno, el  sonido y los testimonios de ex-prisioneros, sumergen al usuario en la atmósfera emocional y psicológica de la prisión. 
+La interactividad permite al usuario explorar la celda a su propio ritmo, creando una sensación de control mientras se esta en el aislamiento en un lugar pequeño. 
+La combinación de audio, señales visuales y movimiento involucra múltiples sentidos sensoriales, reforzando la empatía y la comprensión de la narrativa. 
+En conjunto, la pieza demuestra cómo la tecnología inmersiva  mejorar la narración periodística al fusionar reportajes con experiencias inmersivas.`
+}
 };
 
 let isEnglish = true;
 
-// Textos para los toggles
-const textosToggle = {
-  "medio-info": { en: "Show info", es: "Mostrar info", enHide: "Hide info", esHide: "Ocultar info" },
-  "argumento": { en: "Show plot", es: "Mostrar argumento", enHide: "Hide plot", esHide: "Ocultar argumento" },
-  "reflexion": { en: "Show reflection", es: "Mostrar reflexión", enHide: "Hide reflection", esHide: "Ocultar reflexión" }
-};
-
 // ========================
 // Función para actualizar el contenido según el idioma
 function updateLanguage() {
-  // Datos principales
   document.getElementById("nombre").textContent = datos.nombre;
   document.getElementById("anio").textContent = datos.anio;
   document.getElementById("medio").textContent = isEnglish ? datos.medio.en : datos.medio.es;
   document.getElementById("formato").textContent = datos.formato;
   document.getElementById("url").href = datos.url;
-  document.getElementById("url").textContent = isEnglish ? "View experience" : "Ver experiencia";
 
-  // Plot, Reflexión y Análisis
+  // Actualizar Plot y Reflexión
   document.getElementById("argumento").textContent = isEnglish ? datos.argumento.en : datos.argumento.es;
   document.getElementById("reflexion").textContent = isEnglish ? datos.reflexion.en : datos.reflexion.es;
-  document.getElementById("analisis").textContent = isEnglish ? datos.analisis.en : datos.analisis.es;
 
-  // Títulos
+// Análisis
+document.getElementById("analisis").textContent = isEnglish ? datos.analisis.en : datos.analisis.es;
+document.getElementById("titulo-analisis").textContent = isEnglish ? "Analysis" : "Análisis";
+
+  // Actualizar títulos
   document.getElementById("titulo-principal").textContent = isEnglish ? "Interactive Experience Sheet" : "Ficha de la Experiencia Interactiva";
   document.getElementById("titulo-video").textContent = isEnglish ? "Experience Video" : "Video de la Experiencia";
-  document.getElementById("titulo-analisis").textContent = isEnglish ? "Analysis" : "Análisis";
+
   document.getElementById("titulo-plot").textContent = isEnglish ? "Plot" : "Argumento";
   document.getElementById("titulo-reflexion").textContent = isEnglish ? "Final Reflection" : "Reflexión Final";
-  document.getElementById("titulo-medio").textContent = "The Guardian";
-
-  // Medio info
-  document.getElementById("medio-info").textContent = isEnglish 
-    ? "The Guardian is a British newspaper founded in 1821, recognized worldwide for its independent journalism, investigative reporting, and progressive editorial stance."
-    : "The Guardian es un periódico británico fundado en 1821, reconocido mundialmente por su periodismo independiente, reportajes de investigación y postura editorial progresista.";
-
-  // Botón experiencia
-  document.getElementById("boton-experiencia").textContent = isEnglish ? "Go to the Experience" : "Ir a la Experiencia";
-
-  // Actualizar botones toggle
-  document.querySelectorAll('.toggle-btn').forEach(btn => {
-    const targetId = btn.getAttribute('data-target');
-    const target = document.getElementById(targetId);
-    const isMostrado = target.classList.contains('mostrar');
-
-    if (isMostrado) {
-      btn.textContent = isEnglish ? textosToggle[targetId].enHide : textosToggle[targetId].esHide;
-    } else {
-      btn.textContent = isEnglish ? textosToggle[targetId].en : textosToggle[targetId].es;
-    }
-  });
 }
 
-// ========================
-// Inicializar
+// Inicializar contenido al cargar la página
 updateLanguage();
 
-// Botón cambiar idioma
-document.getElementById("toggleLang").addEventListener("click", () => {
+// ========================
+// Botón para cambiar idioma
+const langBtn = document.getElementById("toggleLang");
+langBtn.addEventListener("click", () => {
   isEnglish = !isEnglish;
   updateLanguage();
-  document.getElementById("toggleLang").textContent = isEnglish ? "🌐 Español" : "🌐 English";
+  langBtn.textContent = isEnglish ? "🌐 Español" : "🌐 English";
 });
 
-// Botones toggle
-document.querySelectorAll('.toggle-btn').forEach(btn => {
+// ========================
+// Botones toggle de mostrar/ocultar contenido
+const toggleButtons = document.querySelectorAll('.toggle-btn');
+toggleButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     const targetId = btn.getAttribute('data-target');
     const target = document.getElementById(targetId);
@@ -104,15 +80,29 @@ document.querySelectorAll('.toggle-btn').forEach(btn => {
     target.classList.toggle('mostrar');
     target.classList.toggle('oculto');
 
-    // Actualizar texto del botón
-    const isMostrado = target.classList.contains('mostrar');
-    btn.textContent = isMostrado ? 
-      (isEnglish ? textosToggle[targetId].enHide : textosToggle[targetId].esHide) : 
-      (isEnglish ? textosToggle[targetId].en : textosToggle[targetId].es);
+    btn.textContent = target.classList.contains('mostrar') 
+      ? (isEnglish ? `Hide ${targetId.replace("-", " ")}` : `Ocultar ${targetId.replace("-", " ")}`)
+      : (isEnglish ? `Show ${targetId.replace("-", " ")}` : `Mostrar ${targetId.replace("-", " ")}`);
+
+    // Scroll suave hacia el contenido mostrado
+    //target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
 
-// Audio
+// ========================
+// Reproducción de audio
 const audio = document.getElementById('audio');
-window.addEventListener('load', () => audio.play().catch(err => console.log('Autoplay bloqueado', err)));
-document.getElementById('playAudio').addEventListener('click', () => audio.play());
+
+
+window.addEventListener('load', () => {
+  audio.play().catch(err => {
+    console.log('Autoplay bloqueado. El usuario debe hacer click para escuchar.', err);
+  });
+});
+
+
+const btnPlayAudio = document.getElementById('playAudio');
+btnPlayAudio.addEventListener('click', () => {
+  audio.play();
+});
+
