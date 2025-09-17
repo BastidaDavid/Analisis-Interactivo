@@ -102,8 +102,10 @@ function updateLanguage() {
   updateTabButtons();
   tabPanels.forEach(panel => {
     const id = panel.id;
-    panel.querySelector('p').textContent = isEnglish ? textosTabsContenido[id].en : textosTabsContenido[id].es;
-  });
+const panelContenido = panel.querySelector(".panel-contenido p");
+if(panelContenido) {
+  panelContenido.textContent = isEnglish ? textosTabsContenido[id].en : textosTabsContenido[id].es;
+}  });
 }
 
 // Tabs click
