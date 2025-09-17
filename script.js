@@ -85,7 +85,7 @@ toggleButtons.forEach(btn => {
       : (isEnglish ? `Show ${targetId.replace("-", " ")}` : `Mostrar ${targetId.replace("-", " ")}`);
 
     // Scroll suave hacia el contenido mostrado
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    //target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
 
