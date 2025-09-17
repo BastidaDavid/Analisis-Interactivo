@@ -176,32 +176,28 @@ audio {
   flex-wrap: wrap;      /* para que en móviles se apilen */
 }
 
-.argumento-box, .reflexion-box {
-  flex: 1;              /* cada uno ocupa el mismo espacio */
-  background: #1f1f1f;
+.guardian-box, .argumento-box, .reflexion-box {
+  flex: 1;               /* cada uno ocupa el mismo espacio */
+  background: #1f1f1f;   /* mismo color que argumento/reflexión */
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  min-width: 200px;      /* evita que se encojan demasiado */
 }
 
-.argumento-box h2, .reflexion-box h2 {
+.guardian-box h2, .argumento-box h2, .reflexion-box h2 {
   border-bottom: 1px solid #333;
   padding-bottom: 8px;
   margin-bottom: 12px;
 }
 
-.argumento-box p, .reflexion-box p {
+.guardian-box p, .argumento-box p, .reflexion-box p {
   line-height: 1.5;
 }
 
 /* Responsive: en pantallas pequeñas se apilan */
-@media (max-width: 768px) {
-  .contenido-flex {
-    flex-direction: column;
-  }
-}
 
-/* Responsive: en pantallas chicas, se apilen */
+
 @media (max-width: 768px) {
   .contenido-flex {
     flex-direction: column;
@@ -215,13 +211,7 @@ audio {
   margin-top: 20px;
 }
 
-.medio-box {
-  flex: 1;
-  background: #1f1f1f;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-}
+
 
 .medio-box h2 {
   border-bottom: 1px solid #333;
