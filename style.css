@@ -373,3 +373,21 @@ audio {
   height: auto;
   border-radius: 10px;
 }
+
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 500px; /* ajusta el tamaño */
+  height: auto;
+  overflow: hidden;
+}
+
+.slider img {
+  width: 100%;
+  display: none;
+  border-radius: 10px;
+}
+
+.slider img.active {
+  display: block;
+}

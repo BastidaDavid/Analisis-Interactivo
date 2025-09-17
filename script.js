@@ -153,3 +153,20 @@ window.addEventListener('load', () => audio.play().catch(err => console.log('Aut
 
 // Inicializar contenido
 updateLanguage();
+
+function iniciarSlider() {
+  const sliders = document.querySelectorAll(".slider");
+
+  sliders.forEach(slider => {
+    let slides = slider.querySelectorAll(".slide");
+    let index = 0;
+
+    setInterval(() => {
+      slides[index].classList.remove("active");
+      index = (index + 1) % slides.length;
+      slides[index].classList.add("active");
+    }, 3000); // cambia cada 3 segundos
+  });
+}
+
+document.addEventListener("DOMContentLoaded", iniciarSlider);
