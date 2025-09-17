@@ -152,7 +152,7 @@ audio {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 20px; /* espacio entre info y logo */
+  gap: 20px;
 }
 
 .ficha .info {
@@ -244,4 +244,11 @@ audio {
 #playAudio:hover {
   transform: scale(1.1);
   box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+}
+
+.logo-audio {
+  display: flex;
+  flex-direction: column; /* si quieres el botón debajo del logo */
+  align-items: center;
+  gap: 10px;              /* espacio entre logo y botón */
 }
