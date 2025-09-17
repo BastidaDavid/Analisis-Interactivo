@@ -10,7 +10,7 @@ const datos = {
     en: "The Guardian is a British newspaper founded in 1821, recognized worldwide for its independent journalism, investigative reporting, and progressive editorial stance.",
     es: "The Guardian es un periódico británico fundado en 1821, reconocido mundialmente por su periodismo independiente, reportajes de investigación y postura editorial progresista."
   }, 
-  
+
   formato: "Realidad Virtual / 360°",
   url: "https://www.theguardian.com/world/ng-interactive/2016/apr/27/6x9-a-virtual-experience-of-solitary-confinement#gvr-360",
   argumento: {
@@ -48,6 +48,9 @@ function updateLanguage() {
   document.getElementById("url").href = datos.url;
 
   // Actualizar Plot y Reflexión
+  document.getElementById("medio-info").textContent = isEnglish 
+    ? datos.medioInfo.en 
+    : datos.medioInfo.es;
   document.getElementById("argumento").textContent = isEnglish ? datos.argumento.en : datos.argumento.es;
   document.getElementById("reflexion").textContent = isEnglish ? datos.reflexion.en : datos.reflexion.es;
 
@@ -86,10 +89,10 @@ toggleButtons.forEach(btn => {
     target.classList.toggle('mostrar');
     target.classList.toggle('oculto');
 
-    btn.textContent = target.classList.contains('mostrar') 
-      ? (isEnglish ? `Hide ${targetId.replace("-", " ")}` : `Ocultar ${targetId.replace("-", " ")}`)
-      : (isEnglish ? `Show ${targetId.replace("-", " ")}` : `Mostrar ${targetId.replace("-", " ")}`);
-
+    const txts = textosToggle[targetId];
+btn.textContent = target.classList.contains('mostrar') 
+      ? (isEnglish ? txts.enHide : txts.esHide)
+      : (isEnglish ? txts.en : txts.es);
     // Scroll suave hacia el contenido mostrado
     //target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
@@ -112,3 +115,8 @@ btnPlayAudio.addEventListener('click', () => {
   audio.play();
 });
 
+const textosToggle = {
+  "medio-info": { en: "Show info", es: "Mostrar info", enHide: "Hide info", esHide: "Ocultar info" },
+  "argumento": { en: "Show plot", es: "Mostrar argumento", enHide: "Hide plot", esHide: "Ocultar argumento" },
+  "reflexion": { en: "Show reflection", es: "Mostrar reflexión", enHide: "Hide reflection", esHide: "Ocultar reflexión" }
+};
