@@ -37,7 +37,7 @@ function updateLanguage() {
   document.getElementById("reflexion").textContent = isEnglish ? datos.reflexion.en : datos.reflexion.es;
 
 // Análisis
-document.getElementById("análisis").textContent = isEnglish ? datos.analisis.en : datos.analisis.es;
+document.getElementById("analisis").textContent = isEnglish ? datos.analisis.en : datos.analisis.es;
 document.getElementById("titulo-analisis").textContent = isEnglish ? "Analysis" : "Análisis";
 
   // Actualizar títulos
