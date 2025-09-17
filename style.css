@@ -6,10 +6,12 @@ body {
   margin: 0;
   padding: 0;
 
-  /* Fondo con degradado opcional encima */
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-              url('img/Carcel.jpg') no-repeat center center fixed;
-  background-size: cover;
+  /* Fondo con imagen real */
+  background-image: url('img/Carcel.jpg');
+  background-size: cover;         /* La imagen cubre todo el body */
+  background-position: center;    /* Centrada */
+  background-repeat: no-repeat;   /* Sin repetir */
+  background-attachment: fixed;   /* Fija al hacer scroll */
 }
 
 
