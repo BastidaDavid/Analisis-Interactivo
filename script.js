@@ -33,7 +33,7 @@ Overall, the piece demonstrates how immersive technology enhance journalistic st
 La narrativa se desarrolla a través de los detalles del entorno, el  sonido y los testimonios de ex-prisioneros, sumergen al usuario en la atmósfera emocional y psicológica de la prisión. 
 La interactividad permite al usuario explorar la celda a su propio ritmo, creando una sensación de control mientras se esta en el aislamiento en un lugar pequeño. 
 La combinación de audio, señales visuales y movimiento involucra múltiples sentidos sensoriales, reforzando la empatía y la comprensión de la narrativa. 
-En conjunto, la pieza demuestra cómo la tecnología inmersiva  mejorar la narración periodística al fusionar reportajes con experiencias inmersivas.`
+En conjunto, la pieza demuestra cómo la tecnología inmersiva  mejora la narración periodística al fusionar reportajes con experiencias inmersivas.`
 }
 };
 
