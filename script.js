@@ -1,18 +1,17 @@
-// ========================
-// Datos de la experiencia
-const datos = {
+const datos = 
+{
   nombre: "6x9: A Virtual Experience of Solitary Confinement",
   anio: "2016",
-  medio: "The Guardian",
+  medio: "The Guardian – British newspaper known for independent journalism",
   formato: "Realidad Virtual / 360°",
   url: "https://www.theguardian.com/world/ng-interactive/2016/apr/27/6x9-a-virtual-experience-of-solitary-confinement#gvr-360",
   argumento: {
-    en: "This VR experience recreates what it means to be in solitary confinement. Through immersive visuals and realistic scenarios, users experience the psychological strain and daily routines of prisoners in isolation. The project is designed to evoke empathy and understanding, showing the extreme effects of confinement on human mental health.",
-    es: "Esta experiencia en VR recrea lo que significa estar en confinamiento solitario. A través de imágenes inmersivas y escenarios realistas, los usuarios experimentan la tensión psicológica y la rutina diaria de los prisioneros en aislamiento. El proyecto busca generar empatía y comprensión, mostrando los efectos extremos del confinamiento en la salud mental humana."
+    en: "This VR experience recreates what it means to be in solitary confinement...",
+    es: "Esta experiencia en VR recrea lo que significa estar en confinamiento solitario..."
   },
   reflexion: {
-    en: "This project was created to raise awareness about the psychological impact of solitary confinement in prisons. The Guardian aimed to generate empathy and social awareness by using virtual reality as an immersive medium, allowing users to experience extreme isolation firsthand. Journalism can use technology to go beyond written information and deeply sensitize audiences about human and social issues.",
-    es: "Este proyecto se realizó para visibilizar el impacto psicológico del confinamiento solitario en las cárceles. The Guardian buscó generar empatía y conciencia social utilizando la realidad virtual como medio inmersivo, permitiendo que los usuarios experimentaran en primera persona el aislamiento extremo. El periodismo puede apoyarse en la tecnología para ir más allá de la información escrita y sensibilizar de manera más profunda a la audiencia sobre problemáticas humanas y sociales."
+    en: "This project was created to raise awareness about the psychological impact of solitary confinement...",
+    es: "Este proyecto se realizó para visibilizar el impacto psicológico del confinamiento solitario..."
   }
 };
 
