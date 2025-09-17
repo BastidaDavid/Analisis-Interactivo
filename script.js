@@ -5,13 +5,11 @@ const datos = {
     en: "The Guardian\nBritish newspaper known for independent journalism",
     es: "The Guardian\nPeriódico británico reconocido por su periodismo independiente"
   },
-
-  medioInfo: {
-  en: "The Guardian is a British newspaper founded in 1821, recognized worldwide for its independent journalism, investigative reporting, and progressive editorial stance. Founded in 1821 as The Manchester Guardian by John Edward Taylor, it has been part of the Scott Trust since 1936, ensuring financial and editorial independence with profits reinvested into journalism. Editor-in-chief Katharine Viner has led its digital transformation, reaching global audiences, especially in the US, with growing subscription and donation revenue. In 2018 it adopted a modern tabloid format for print. Innovations like Secure Messaging, developed with Cambridge University, allow secure communication between journalists and sources. The Guardian focuses on human rights, social justice, and the environment, combining narrative, investigation, and technology to foster empathy, awareness, and critical reflection. Its reader-funded model ensures independence from corporations or governments, making it a global benchmark of ethical journalism.",
   
-  es: "The Guardian es un periódico británico fundado en 1821, reconocido mundialmente por su periodismo independiente, reportajes de investigación y postura editorial progresista. Fundado en 1821 como The Manchester Guardian por John Edward Taylor, pertenece al Scott Trust desde 1936, garantizando su independencia financiera y editorial, con beneficios reinvertidos en periodismo. La editora en jefe, Katharine Viner, ha impulsado su transformación digital, alcanzando audiencias globales, especialmente en Estados Unidos, y generando ingresos crecientes mediante suscripciones y donaciones. En 2018 adoptó un formato tabloide moderno para la edición impresa. Innovaciones como la herramienta Secure Messaging, desarrollada con la Universidad de Cambridge, permiten comunicaciones seguras entre periodistas y fuentes. The Guardian se centra en derechos humanos, justicia social y medio ambiente, combinando narrativa, investigación y tecnología para generar empatía, conciencia y reflexión crítica. Su modelo de financiamiento basado en lectores asegura independencia frente a corporaciones o gobiernos, consolidándolo como referente global del periodismo ético y de calidad."
-},
-
+  medioInfo: {
+    en: "The Guardian is a British newspaper founded in 1821, recognized worldwide for its independent journalism, investigative reporting, and progressive editorial stance. Founded in 1821 as The Manchester Guardian by John Edward Taylor, it has been part of the Scott Trust since 1936, ensuring financial and editorial independence with profits reinvested into journalism. Editor-in-chief Katharine Viner has led its digital transformation, reaching global audiences, especially in the US, with growing subscription and donation revenue. In 2018 it adopted a modern tabloid format for print. Innovations like Secure Messaging, developed with Cambridge University, allow secure communication between journalists and sources. The Guardian focuses on human rights, social justice, and the environment, combining narrative, investigation, and technology to foster empathy, awareness, and critical reflection. Its reader-funded model ensures independence from corporations or governments, making it a global benchmark of ethical journalism.",
+    es: "The Guardian es un periódico británico fundado en 1821, reconocido mundialmente por su periodismo independiente, reportajes de investigación y postura editorial progresista. Fundado en 1821 como The Manchester Guardian por John Edward Taylor, pertenece al Scott Trust desde 1936, garantizando su independencia financiera y editorial, con beneficios reinvertidos en periodismo. La editora en jefe, Katharine Viner, ha impulsado su transformación digital, alcanzando audiencias globales, especialmente en Estados Unidos, y generando ingresos crecientes mediante suscripciones y donaciones. En 2018 adoptó un formato tabloide moderno para la edición impresa. Innovaciones como la herramienta Secure Messaging, desarrollada con la Universidad de Cambridge, permiten comunicaciones seguras entre periodistas y fuentes. The Guardian se centra en derechos humanos, justicia social y medio ambiente, combinando narrativa, investigación y tecnología para generar empatía, conciencia y reflexión crítica. Su modelo de financiamiento basado en lectores asegura independencia frente a corporaciones o gobiernos, consolidándolo como referente global del periodismo ético y de calidad."
+  },
   formato: "Realidad Virtual / 360°",
   url: "https://www.theguardian.com/world/ng-interactive/2016/apr/27/6x9-a-virtual-experience-of-solitary-confinement#gvr-360",
   argumento: {
@@ -23,18 +21,17 @@ const datos = {
     es: "El proyecto se desarrolló para visibilizar las consecuencias psicológicas y emocionales del confinamiento solitario. Usando VR, The Guardian permite a los participantes experimentar el aislamiento extremo en primera persona, transformando estadísticas abstractas en vivencias personales. Este enfoque de narrativa demuestra cómo el periodismo puede ir más allá del texto, generando empatía y comprensión. Invita a reflexionar sobre las dimensiones éticas de las prácticas penitenciarias, las implicaciones en la salud mental de los internos y la responsabilidad de la sociedad. La experiencia desafía a considerar el equilibrio entre seguridad, castigo y humanidad, mostrando el poder de la tecnología inmersiva para concienciar, provocar pensamiento crítico y fomentar una conexión más profunda con los derechos humanos."
   },
   analisis: {
-  en: `For me, This VR experience combines narrative storytelling with interactive elements. 
+    en: `For me, This VR experience combines narrative storytelling with interactive elements. 
 The narrative unfolds through environmental details, sound design, and the testimonies of former prisoners, immersing the user in the emotional and psychological atmosphere of the prision. 
 Interactivity allows the user to explore the cell at their own pace, creating a sense of agency while emphasizing isolation in a bit place. 
 The combination of audio, visual cues, and movement engages multiple sensorial senses, reinforcing empathy and understanding of the narrative. 
 Overall, the piece demonstrates how immersive technology enhance journalistic storytelling by merging reporting with experiential immersion.`,
-  
-  es: `Para mi , esta experiencia VR combina la narración con elementos interactivos. 
+    es: `Para mi , esta experiencia VR combina la narración con elementos interactivos. 
 La narrativa se desarrolla a través de los detalles del entorno, el  sonido y los testimonios de ex-prisioneros, sumergen al usuario en la atmósfera emocional y psicológica de la prisión. 
 La interactividad permite al usuario explorar la celda a su propio ritmo, creando una sensación de control mientras se esta en el aislamiento en un lugar pequeño. 
 La combinación de audio, señales visuales y movimiento involucra múltiples sentidos sensoriales, reforzando la empatía y la comprensión de la narrativa. 
 En conjunto, la pieza demuestra cómo la tecnología inmersiva  mejora la narración periodística al fusionar reportajes con experiencias inmersivas.`
-}
+  }
 };
 
 let isEnglish = true;
@@ -42,8 +39,18 @@ let isEnglish = true;
 const tabButtons = document.querySelectorAll('.tab-btn');
 const tabPanels = document.querySelectorAll('.tab-panel');
 
+const textosTabs = {
+  "tab-estetica": { en: "Visual Aesthetics", es: "Estética Visual" },
+  "tab-ocularizacion": { en: "Ocularization", es: "Ocularización" },
+  "tab-relato": { en: "Story Structure", es: "Estructura del Relato" },
+  "tab-interaccion": { en: "Interaction", es: "Interacción" },
+  "tab-sonido": { en: "Sound", es: "Sonido" },
+  "tab-protagonista": { en: "Protagonist", es: "Protagonista" }
+};
+
+// Contenido de cada tab
 const textosTabsContenido = {
-  "tab-estetica": { en: "For me, This VR experience combines narrative storytelling with interactive elements.", es: "Para mi , esta experiencia VR combina la narración con elementos interactivos." },
+  "tab-estetica": { en: datos.analisis.en.split('\n')[0], es: datos.analisis.es.split('\n')[0] },
   "tab-ocularizacion": { en: "Presented in first person, immersing the user as the protagonist.", es: "Se presenta en primera persona, haciendo que el usuario viva la experiencia como protagonista." },
   "tab-relato": { en: "The narrative is linear, following the prisoner's routine step by step.", es: "El relato es lineal: seguimos la rutina del prisionero dentro de la celda paso a paso." },
   "tab-interaccion": { en: "The user can explore the cell, interact with objects, and hear diegetic sounds.", es: "El usuario puede explorar la celda, interactuar con objetos y escuchar sonidos diegéticos del entorno." },
@@ -51,7 +58,7 @@ const textosTabsContenido = {
   "tab-protagonista": { en: "The user is the protagonist, experiencing the VR in first person.", es: "El usuario es el protagonista, viviendo la experiencia en primera persona dentro de la celda." }
 };
 
-// Función para actualizar los botones de tabs según el idioma
+// Función para actualizar los botones de tabs
 function updateTabButtons() {
   tabButtons.forEach(btn => {
     const target = btn.dataset.target;
@@ -59,16 +66,16 @@ function updateTabButtons() {
   });
 }
 
-// Función para actualizar todo el contenido
+// Función para actualizar los contenidos
 function updateLanguage() {
-  // 1️⃣ Títulos
+  // Títulos
   document.getElementById("titulo-principal").textContent = isEnglish ? "Interactive Experience Sheet" : "Ficha de la Experiencia Interactiva";
   document.getElementById("titulo-video").textContent = isEnglish ? "Experience Video" : "Video de la Experiencia";
   document.getElementById("titulo-medio").textContent = "The Guardian";
   document.getElementById("titulo-plot").textContent = isEnglish ? "Plot" : "Argumento";
   document.getElementById("titulo-reflexion").textContent = isEnglish ? "Final Reflection" : "Reflexión Final";
 
-  // 2️⃣ Etiquetas de la ficha
+  // Etiquetas
   document.getElementById("nombre-label").textContent = isEnglish ? "Name:" : "Nombre:";
   document.getElementById("anio-label").textContent = isEnglish ? "Year of creation:" : "Año de creación:";
   document.getElementById("medio-label").textContent = isEnglish ? "Media:" : "Medio:";
@@ -76,33 +83,30 @@ function updateLanguage() {
   document.getElementById("url-label").textContent = "URL:";
   document.getElementById("url").textContent = isEnglish ? "View experience" : "Ver experiencia";
 
-  // 3️⃣ Valores de la ficha
+  // Valores ficha
   document.getElementById('nombre').textContent = datos.nombre;
   document.getElementById('anio').textContent = datos.anio;
   document.getElementById('medio').textContent = isEnglish ? datos.medio.en : datos.medio.es;
   document.getElementById('formato').textContent = datos.formato;
   document.getElementById('url').href = datos.url;
 
-  // 4️⃣ Contenido de Plot, Reflexión y Medio info
-document.getElementById("argumento").textContent = isEnglish ? datos.argumento.en : datos.argumento.es;
-document.getElementById("reflexion").textContent = isEnglish ? datos.reflexion.en : datos.reflexion.es;
-document.getElementById("medio-info").textContent = isEnglish ? datos.medioInfo.en : datos.medioInfo.es;
-  // 5️⃣ Medio info resumida
+  // Contenidos principales
+  document.getElementById("argumento").textContent = isEnglish ? datos.argumento.en : datos.argumento.es;
+  document.getElementById("reflexion").textContent = isEnglish ? datos.reflexion.en : datos.reflexion.es;
   document.getElementById("medio-info").textContent = isEnglish ? datos.medioInfo.en : datos.medioInfo.es;
 
-  // 6️⃣ Botones y tabs
+  // Botón experiencia
   document.getElementById("boton-experiencia").textContent = isEnglish ? "Go to the Experience" : "Ir a la Experiencia";
 
+  // Tabs
   updateTabButtons();
-//cambiar idioma
-const langBtn = document.getElementById("toggleLang");
-langBtn.addEventListener("click", () => {
-  isEnglish = !isEnglish;
-  updateLanguage();
-  langBtn.textContent = isEnglish ? "🌐 Español" : "🌐 English";
-});
+  tabPanels.forEach(panel => {
+    const id = panel.id;
+    panel.querySelector('p').textContent = isEnglish ? textosTabsContenido[id].en : textosTabsContenido[id].es;
+  });
+}
 
-// 3️⃣ tabs
+// Tabs click
 tabButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     tabButtons.forEach(b => b.classList.remove('active'));
@@ -112,59 +116,40 @@ tabButtons.forEach(btn => {
     document.getElementById(btn.dataset.target).classList.add('active');
   });
 });
-    // Cambiar texto de ese panel según idioma
-    const key = btn.dataset.target.replace('tab-', '');
-    let texto = "";
-    switch(key) {
-      case 'estetica':
-        texto = isEnglish ? "For me, This VR experience combines narrative storytelling with interactive elements." : "Para mi , esta experiencia VR combina la narración con elementos interactivos.";
-        break;
-      case 'ocularizacion':
-        texto = isEnglish ? "Presented in first person, immersing the user as the protagonist." : "Se presenta en primera persona, haciendo que el usuario viva la experiencia como protagonista.";
-        break;
-      case 'relato':
-        texto = isEnglish ? "The narrative is linear, following the prisoner's routine step by step." : "El relato es lineal: seguimos la rutina del prisionero dentro de la celda paso a paso.";
-        break;
-      case 'interaccion':
-        texto = isEnglish ? "The user can explore the cell, interact with objects, and hear diegetic sounds." : "El usuario puede explorar la celda, interactuar con objetos y escuchar sonidos diegéticos del entorno.";
-        break;
-      case 'sonido':
-        texto = isEnglish ? "Ambient sound and ex-prisoner dialogues reinforce immersion." : "Sonido ambiental y diálogos de ex-prisioneros refuerzan la inmersión y la atmósfera emocional.";
-        break;
-      case 'protagonista':
-        texto = isEnglish ? "The user is the protagonist, experiencing the VR in first person." : "El usuario es el protagonista, viviendo la experiencia en primera persona dentro de la celda.";
-        break;
-    }
 
-    panel.querySelector('p').textContent = texto;
-  }
-
-// 4️⃣ Manejo de click en toggles (definir solo una vez, fuera de updateLanguage)
+// Toggle show/hide
 document.querySelectorAll('.toggle-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const targetId = btn.getAttribute('data-target');
     const target = document.getElementById(targetId);
 
-    // Alternar clases
+
     target.classList.toggle('mostrar');
     target.classList.toggle('oculto');
 
-    // Actualizar texto del botón según idioma
-    btn.textContent = target.classList.contains('mostrar') 
-      ? (isEnglish ? `Hide ${btn.previousElementSibling.textContent}` : `Ocultar ${btn.previousElementSibling.textContent}`) 
+    btn.textContent = target.classList.contains('mostrar')
+      ? (isEnglish ? `Hide ${btn.previousElementSibling.textContent}` : `Ocultar ${btn.previousElementSibling.textContent}`)
       : (isEnglish ? `Show ${btn.previousElementSibling.textContent}` : `Mostrar ${btn.previousElementSibling.textContent}`);
 
-    // Mantener texto actualizado según idioma
+
     if(targetId === "medio-info") target.textContent = isEnglish ? datos.medioInfo.en : datos.medioInfo.es;
     if(targetId === "argumento") target.textContent = isEnglish ? datos.argumento.en : datos.argumento.es;
     if(targetId === "reflexion") target.textContent = isEnglish ? datos.reflexion.en : datos.reflexion.es;
   });
 });
 
+// Cambio de idioma
+const langBtn = document.getElementById("toggleLang");
+langBtn.addEventListener("click", () => {
+  isEnglish = !isEnglish;
+  updateLanguage();
+  langBtn.textContent = isEnglish ? "🌐 Español" : "🌐 English";
+});
 
-
+// Audio
 const audio = document.getElementById('audio');
 document.getElementById('playAudio').addEventListener('click', () => audio.play());
 window.addEventListener('load', () => audio.play().catch(err => console.log('Autoplay blocked', err)));
 
+// Inicializar contenido
 updateLanguage();
