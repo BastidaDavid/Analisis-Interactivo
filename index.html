@@ -12,19 +12,19 @@
 <div class="container">
 
 <section class="ficha">
-    <h1>Interactive Experience Sheet</h1>
+    <h1 id="titulo-principal">Interactive Experience Sheet</h1>
     <button id="playAudio" title="Listen to music">🔊</button>
-        <audio id="audio" src="invocation - Lish Grooves.mp3"></audio>
+    <audio id="audio" src="invocation - Lish Grooves.mp3"></audio>
     <div class="ficha-contenido">
 
       
       <!-- Main information -->
       <div class="info">
-        <p><strong>Name:</strong> <span id="nombre"></span></p>
-        <p><strong>Year of creation:</strong> <span id="anio"></span></p>
-        <p><strong>Media:</strong> <span id="medio"></span></p>
-        <p><strong>Format:</strong> <span id="formato"></span></p>
-        <p><strong>URL:</strong> <a id="url" href="#" target="_blank">View experience</a></p>
+        <p><strong id="nombre-label">Name:</strong> <span id="nombre"></span></p>
+        <p><strong id="anio-label">Year of creation:</strong> <span id="anio"></span></p>
+        <p><strong id="medio-label">Media:</strong> <span id="medio"></span></p>
+        <p><strong id="formato-label">Format:</strong> <span id="formato"></span></p>
+        <p><strong id="url-label">URL:</strong> <a id="url" href="#" target="_blank">View experience</a></p>
       </div>
 
       <!-- Logo + audio button -->
@@ -34,10 +34,11 @@
       </div>
 
     </div>
-  </section>
+</section>
+
 <!-- Experience Video -->
 <section class="video">
-  <h2>Experience Video</h2>
+  <h2 id="titulo-video">Experience Video</h2>
   <div class="video-responsive">
     <iframe 
       src="https://www.youtube.com/embed/hwbJLlbeAS0?autoplay=1&mute=1&controls=0&rel=0&loop=1&playlist=hwbJLlbeAS0" 
@@ -53,94 +54,110 @@
 <!-- Section with Media, Plot, and Reflection -->
 <section class="contenido-flex">
   <div class="medio-box">
-    <h2>The Guardian</h2>
+    <h2 id="titulo-medio">The Guardian</h2>
     <button class="toggle-btn" data-target="medio-info">Show info</button>
     <p id="medio-info" class="oculto">Here you can add information about the media, history, objectives, etc.</p>
   </div>
 
   <div class="argumento-box">
-    <h2>Plot</h2>
+    <h2 id="titulo-plot">Plot</h2>
     <button class="toggle-btn" data-target="argumento">Show plot</button>
     <p id="argumento" class="oculto"></p>
   </div>
 
   <div class="reflexion-box">
-    <h2>Final Reflection</h2>
+    <h2 id="titulo-reflexion">Final Reflection</h2>
     <button class="toggle-btn" data-target="reflexion">Show reflection</button>
     <p id="reflexion" class="oculto"></p>
   </div>
 </section>
 
-  <section class="juego">
-    <a href="https://www.theguardian.com/world/ng-interactive/2016/apr/27/6x9-a-virtual-experience-of-solitary-confinement#gvr-360" target="_blank">
-      <button>Go to the Experience</button>
-    </a>
-  </section>
+<section class="juego">
+  <a href="https://www.theguardian.com/world/ng-interactive/2016/apr/27/6x9-a-virtual-experience-of-solitary-confinement#gvr-360" target="_blank">
+    <button id="boton-experiencia">Go to the Experience</button>
+  </a>
+</section>
 
 </div>
 
 <script src="script.js"></script>
 <script>
-    const langBtn = document.getElementById("toggleLang");
-    let isEnglish = true;
+const langBtn = document.getElementById("toggleLang");
+let isEnglish = true;
 
-    langBtn.addEventListener("click", () => {
-      if (isEnglish) {
-        document.querySelector("h1").textContent = "Ficha de la Experiencia Interactiva";
-        document.querySelector(".info p:nth-child(1) strong").textContent = "Nombre:";
-        document.querySelector(".info p:nth-child(2) strong").textContent = "Año de creación:";
-        document.querySelector(".info p:nth-child(3) strong").textContent = "Medio:";
-        document.querySelector(".info p:nth-child(4) strong").textContent = "Formato:";
-        document.querySelector(".info p:nth-child(5) strong").textContent = "URL:";
-        document.querySelector(".info a").textContent = "Ver experiencia";
+function updateLanguage() {
+  // Titles
+  document.getElementById("titulo-principal").textContent = isEnglish ? "Interactive Experience Sheet" : "Ficha de la Experiencia Interactiva";
+  document.getElementById("titulo-video").textContent = isEnglish ? "Experience Video" : "Video de la Experiencia";
+  document.getElementById("titulo-medio").textContent = "The Guardian";
+  document.getElementById("titulo-plot").textContent = isEnglish ? "Plot" : "Argumento";
+  document.getElementById("titulo-reflexion").textContent = isEnglish ? "Final Reflection" : "Reflexión Final";
 
-        document.querySelector(".video h2").textContent = "Video de la Experiencia";
+  // Main info
+  document.getElementById("nombre-label").textContent = isEnglish ? "Name:" : "Nombre:";
+  document.getElementById("anio-label").textContent = isEnglish ? "Year of creation:" : "Año de creación:";
+  document.getElementById("medio-label").textContent = isEnglish ? "Media:" : "Medio:";
+  document.getElementById("formato-label").textContent = isEnglish ? "Format:" : "Formato:";
+  document.getElementById("url-label").textContent = "URL:";
+  document.getElementById("url").textContent = isEnglish ? "View experience" : "Ver experiencia";
 
-        document.querySelector(".medio-box h2").textContent = "The Guardian";
-        document.querySelector(".medio-box button").textContent = "Mostrar info";
-        document.getElementById("medio-info").textContent = "The Guardian es un periódico británico fundado en 1821, reconocido mundialmente por su periodismo independiente, reportajes de investigación y postura editorial progresista.";
+  // Plot & Reflection
+  document.getElementById("argumento").textContent = isEnglish ? datos.argumento.en : datos.argumento.es;
+  document.getElementById("reflexion").textContent = isEnglish ? datos.reflexion.en : datos.reflexion.es;
 
-        document.querySelector(".argumento-box h2").textContent = "Argumento";
-        document.querySelector(".argumento-box button").textContent = "Mostrar argumento";
+  // Medio info
+  document.getElementById("medio-info").textContent = isEnglish 
+    ? "The Guardian is a British newspaper founded in 1821, recognized worldwide for its independent journalism, investigative reporting, and progressive editorial stance."
+    : "The Guardian es un periódico británico fundado en 1821, reconocido mundialmente por su periodismo independiente, reportajes de investigación y postura editorial progresista.";
 
-        document.querySelector(".reflexion-box h2").textContent = "Reflexión Final";
-        document.querySelector(".reflexion-box button").textContent = "Mostrar reflexión";
+  // Button
+  document.getElementById("boton-experiencia").textContent = isEnglish ? "Go to the Experience" : "Ir a la Experiencia";
 
-        document.querySelector(".juego button").textContent = "Ir a la Experiencia";
+  // Toggle info buttons
+  document.querySelectorAll('.toggle-btn').forEach(btn => {
+    const targetId = btn.getAttribute('data-target');
+    btn.textContent = document.getElementById(targetId).classList.contains('mostrar') 
+      ? (isEnglish ? `Hide ${targetId.replace("-", " ")}` : `Ocultar ${targetId.replace("-", " ")}`)
+      : (isEnglish ? `Show ${targetId.replace("-", " ")}` : `Mostrar ${targetId.replace("-", " ")}`);
+  });
+}
 
-        langBtn.textContent = "🌐 English";
-        isEnglish = false;
-      } else {
-        document.querySelector("h1").textContent = "Interactive Experience Sheet";
-        document.querySelector(".info p:nth-child(1) strong").textContent = "Name:";
-        document.querySelector(".info p:nth-child(2) strong").textContent = "Year of creation:";
-        document.querySelector(".info p:nth-child(3) strong").textContent = "Media:";
-        document.querySelector(".info p:nth-child(4) strong").textContent = "Format:";
-        document.querySelector(".info p:nth-child(5) strong").textContent = "URL:";
-        document.querySelector(".info a").textContent = "View experience";
+// Initialize content
+updateLanguage();
 
-        document.querySelector(".video h2").textContent = "Experience Video";
+// Language toggle
+langBtn.addEventListener("click", () => {
+  isEnglish = !isEnglish;
+  updateLanguage();
+  langBtn.textContent = isEnglish ? "🌐 Español" : "🌐 English";
+});
 
-        document.querySelector(".medio-box h2").textContent = "The Guardian";
-        document.querySelector(".medio-box button").textContent = "Show info";
-        document.getElementById("medio-info").textContent = "The Guardian is a British newspaper founded in 1821, recognized worldwide for its independent journalism, investigative reporting, and progressive editorial stance.";
+// Toggle show/hide content
+document.querySelectorAll('.toggle-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const targetId = btn.getAttribute('data-target');
+    const target = document.getElementById(targetId);
+    target.classList.toggle('mostrar');
+    target.classList.toggle('oculto');
+    btn.textContent = target.classList.contains('mostrar') 
+      ? (isEnglish ? `Hide ${targetId.replace("-", " ")}` : `Ocultar ${targetId.replace("-", " ")}`)
+      : (isEnglish ? `Show ${targetId.replace("-", " ")}` : `Mostrar ${targetId.replace("-", " ")}`);
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
 
-        document.querySelector(".argumento-box h2").textContent = "Plot";
-        document.querySelector(".argumento-box button").textContent = "Show plot";
+// Audio autoplay
+const audio = document.getElementById('audio');
+window.addEventListener('load', () => {
+  audio.play().catch(err => console.log('Autoplay blocked', err));
+});
+document.getElementById('playAudio').addEventListener('click', () => audio.play());
+</script>
 
-        document.querySelector(".reflexion-box h2").textContent = "Final Reflection";
-        document.querySelector(".reflexion-box button").textContent = "Show reflection";
-
-        document.querySelector(".juego button").textContent = "Go to the Experience";
-
-        langBtn.textContent = "🌐 Español";
-        isEnglish = true;
-      }
-    });
-  </script>
-</body>
-<!-- Footer con autoría -->
+<!-- Footer -->
 <footer class="footer">
   <p>© 2025 David Ramírez Bastida - Multimedia Designer</p>
 </footer>
+
+</body>
 </html>

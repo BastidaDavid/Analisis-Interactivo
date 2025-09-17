@@ -28,13 +28,20 @@ function updateLanguage() {
   document.getElementById("formato").textContent = datos.formato;
   document.getElementById("url").href = datos.url;
 
-  // Aquí se actualiza el Plot y la Reflection
+  
   document.getElementById("argumento").textContent = isEnglish ? datos.argumento.en : datos.argumento.es;
   document.getElementById("reflexion").textContent = isEnglish ? datos.reflexion.en : datos.reflexion.es;
 
   document.getElementById("medio-info").textContent = isEnglish 
     ? "The Guardian is a British newspaper founded in 1821, recognized worldwide for its independent journalism, investigative reporting, and progressive editorial stance."
     : "The Guardian es un periódico británico fundado en 1821, reconocido mundialmente por su periodismo independiente, reportajes de investigación y postura editorial progresista.";
+
+  // Actualizar títulos
+  document.getElementById("titulo-principal").textContent = isEnglish ? "Interactive Experience Sheet" : "Ficha de la Experiencia Interactiva";
+  document.getElementById("titulo-video").textContent = isEnglish ? "Experience Video" : "Video de la Experiencia";
+  document.getElementById("titulo-medio").textContent = "The Guardian";
+  document.getElementById("titulo-plot").textContent = isEnglish ? "Plot" : "Argumento";
+  document.getElementById("titulo-reflexion").textContent = isEnglish ? "Final Reflection" : "Reflexión Final";
 }
 
 // Inicializar contenido al cargar la página
@@ -64,7 +71,7 @@ toggleButtons.forEach(btn => {
       ? (isEnglish ? `Hide ${targetId.replace("-", " ")}` : `Ocultar ${targetId.replace("-", " ")}`)
       : (isEnglish ? `Show ${targetId.replace("-", " ")}` : `Mostrar ${targetId.replace("-", " ")}`);
 
-    // Scroll suave hacia el contenido mostrado
+
     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
@@ -73,14 +80,14 @@ toggleButtons.forEach(btn => {
 // Reproducción de audio
 const audio = document.getElementById('audio');
 
-// Intentar reproducir automáticamente al cargar la página
+
 window.addEventListener('load', () => {
   audio.play().catch(err => {
     console.log('Autoplay bloqueado. El usuario debe hacer click para escuchar.', err);
   });
 });
 
-// Botón para reproducir audio si autoplay falla
+
 const btnPlayAudio = document.getElementById('playAudio');
 btnPlayAudio.addEventListener('click', () => {
   audio.play();
