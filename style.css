@@ -276,3 +276,21 @@ audio {
 .ficha .info p span {
   white-space: pre-wrap; /* respeta \n como salto de línea */
 }
+
+.analisis-item {
+  display: flex;
+  align-items: flex-start; /* Alinea texto e imagen al inicio */
+  gap: 20px; /* Espacio entre texto e imagen */
+  margin-bottom: 30px; 
+}
+
+.analisis-item p {
+  flex: 1; /* El texto ocupa todo el espacio disponible */
+}
+
+.analisis-item img {
+  width: 250px; /* Ajusta tamaño de la imagen */
+  height: auto;
+  border-radius: 8px; /* Opcional: esquinas redondeadas */
+  object-fit: cover;
+}
