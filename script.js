@@ -196,12 +196,5 @@ document.querySelectorAll('.toggle-btn').forEach(btn => {
   });
 });
 
-// Actualizar los botones de Show/Hide según idioma y estado
-document.querySelectorAll('.toggle-btn').forEach(btn => {
-  const targetId = btn.getAttribute('data-target');
-  const target = document.getElementById(targetId);
-  btn.textContent = target.classList.contains('mostrar') 
-    ? (isEnglish ? `Hide ${targetId.replace("-", " ")}` : `Ocultar ${targetId.replace("-", " ")}`)
-    : (isEnglish ? `Show ${targetId.replace("-", " ")}` : `Mostrar ${targetId.replace("-", " ")}`);
-})
+
 }
