@@ -17,6 +17,7 @@ document.getElementById("formato").textContent = datos.formato;
 document.getElementById("url").href = datos.url;
 document.getElementById("argumento").textContent = datos.argumento;
 document.getElementById("reflexion").textContent = datos.reflexion;
+document.getElementById("medio-info").textContent = "The Guardian is a British newspaper founded in 1821, recognized worldwide for its independent journalism, investigative reporting, and progressive editorial stance.";
 
 // Funcionalidad para todos los botones toggle
 const toggleButtons = document.querySelectorAll('.toggle-btn');
