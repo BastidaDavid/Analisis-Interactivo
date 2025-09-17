@@ -278,3 +278,7 @@ audio {
   font-size: 14px;
   border-top: 1px solid #333;
 }
+
+.ficha .info p span {
+  white-space: pre-wrap; /* respeta \n como salto de línea */
+}

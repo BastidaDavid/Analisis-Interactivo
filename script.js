@@ -1,7 +1,10 @@
 const datos = {
   nombre: "6x9: A Virtual Experience of Solitary Confinement",
   anio: "2016",
-  medio: "The Guardian\nBritish newspaper known for independent journalism",
+  medio: {
+    en: "The Guardian\nBritish newspaper known for independent journalism",
+    es: "The Guardian\nPeriódico británico reconocido por su periodismo independiente"
+  },
   formato: "Realidad Virtual / 360°",
   url: "https://www.theguardian.com/world/ng-interactive/2016/apr/27/6x9-a-virtual-experience-of-solitary-confinement#gvr-360",
   argumento: {
@@ -21,7 +24,7 @@ let isEnglish = true;
 function updateLanguage() {
   document.getElementById("nombre").textContent = datos.nombre;
   document.getElementById("anio").textContent = datos.anio;
-  document.getElementById("medio").textContent = datos.medio;
+  document.getElementById("medio").textContent = isEnglish ? datos.medio.en : datos.medio.es;
   document.getElementById("formato").textContent = datos.formato;
   document.getElementById("url").href = datos.url;
 
@@ -33,7 +36,7 @@ function updateLanguage() {
     : "The Guardian es un periódico británico fundado en 1821, reconocido mundialmente por su periodismo independiente, reportajes de investigación y postura editorial progresista.";
 }
 
-// Inicializar contenido en inglés al cargar
+// Inicializar contenido al cargar la página
 updateLanguage();
 
 // ========================
