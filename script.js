@@ -16,9 +16,18 @@ const datos = {
     es: "La experiencia invita a los espectadores a reflexionar sobre los derechos humanos y las condiciones carcelarias, enfatizando el impacto psicológico del aislamiento."
   },
   analisis: {
-    en: "The VR piece is not only an artistic experience but also a journalistic experiment. By simulating the cell environment, The Guardian uses immersive media to strengthen its investigative reporting. This approach bridges journalism and activism, encouraging audiences to reflect on systemic issues such as prison reform and human rights.",
-    es: "La pieza VR no es solo una experiencia artística, sino también un experimento periodístico. Al simular el entorno de la celda, The Guardian utiliza medios inmersivos para reforzar su periodismo de investigación. Este enfoque conecta el periodismo con el activismo, invitando al público a reflexionar sobre problemas sistémicos como la reforma penitenciaria y los derechos humanos."
-  }
+  en: `For me, This VR experience combines narrative storytelling with interactive elements. 
+The narrative unfolds through environmental details, sound design, and the testimonies of former prisoners, immersing the user in the emotional and psychological atmosphere of the prision. 
+Interactivity allows the user to explore the cell at their own pace, creating a sense of agency while emphasizing isolation in a bit place. 
+The combination of audio, visual cues, and movement engages multiple sensorial senses, reinforcing empathy and understanding of the narrative. 
+Overall, the piece demonstrates how immersive technology enhance journalistic storytelling by merging reporting with experiential immersion.`,
+  
+  es: `Para mi , esta experiencia VR combina la narración con elementos interactivos. 
+La narrativa se desarrolla a través de los detalles del entorno, el  sonido y los testimonios de ex-prisioneros, sumergen al usuario en la atmósfera emocional y psicológica de la prisión. 
+La interactividad permite al usuario explorar la celda a su propio ritmo, creando una sensación de control mientras se esta en el aislamiento en un lugar pequeño. 
+La combinación de audio, señales visuales y movimiento involucra múltiples sentidos sensoriales, reforzando la empatía y la comprensión de la narrativa. 
+En conjunto, la pieza demuestra cómo la tecnología inmersiva  mejorar la narración periodística al fusionar reportajes con experiencias inmersivas.`
+}
 };
 
 let isEnglish = true;
