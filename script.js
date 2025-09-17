@@ -38,6 +38,10 @@ En conjunto, la pieza demuestra cómo la tecnología inmersiva  mejora la narrac
 };
 
 let isEnglish = true;
+
+const tabButtons = document.querySelectorAll('.tab-btn');
+const tabPanels = document.querySelectorAll('.tab-panel');
+
 const textosTabs = {
   "tab-estetica": { en: "Visual Aesthetics", es: "Estética Visual" },
   "tab-ocularizacion": { en: "Ocularization", es: "Ocularización" },
@@ -47,46 +51,24 @@ const textosTabs = {
   "tab-protagonista": { en: "Protagonist", es: "Protagonista" }
 };
 
-
-
-// ========================
-// Función para actualizar el contenido según el idioma
-function updateLanguage() {
-  document.getElementById("nombre").textContent = datos.nombre;
-  document.getElementById("anio").textContent = datos.anio;
-  document.getElementById("medio").textContent = isEnglish ? datos.medio.en : datos.medio.es;
-  document.getElementById("formato").textContent = datos.formato;
-  document.getElementById("url").href = datos.url;
-
-  // Actualizar Plot y Reflexión
-  document.getElementById("medio-info").textContent = isEnglish 
-    ? datos.medioInfo.en 
-    : datos.medioInfo.es;
-  document.getElementById("argumento").textContent = isEnglish ? datos.argumento.en : datos.argumento.es;
-  document.getElementById("reflexion").textContent = isEnglish ? datos.reflexion.en : datos.reflexion.es;
-
-  // Análisis
-  document.getElementById("analisis").textContent = isEnglish ? datos.analisis.en : datos.analisis.es;
-  document.getElementById("titulo-analisis").textContent = isEnglish ? "Analysis" : "Análisis";
-
-  // Actualizar títulos principales
-  document.getElementById("titulo-principal").textContent = isEnglish ? "Interactive Experience Sheet" : "Ficha de la Experiencia Interactiva";
-  document.getElementById("titulo-video").textContent = isEnglish ? "Experience Video" : "Video de la Experiencia";
- 
-  document.getElementById("titulo-plot").textContent = isEnglish ? "Plot" : "Argumento";
-  document.getElementById("titulo-reflexion").textContent = isEnglish ? "Final Reflection" : "Reflexión Final";
-
-  // ======== NUEVO: actualizar botones de tabs ========
+// Función para actualizar los botones de tabs según el idioma
+function updateTabButtons() {
   tabButtons.forEach(btn => {
     const target = btn.dataset.target;
     btn.textContent = isEnglish ? textosTabs[target].en : textosTabs[target].es;
   });
 }
+
+// Función para actualizar todo el contenido
+function updateLanguage() {
+  // ...tu código para actualizar títulos, contenido, reflexiones, análisis, etc.
+  updateTabButtons();
+}
+
 // Inicializar contenido al cargar la página
 updateLanguage();
 
-// ========================
-// Botón para cambiar idioma
+// Botón de cambiar idioma
 const langBtn = document.getElementById("toggleLang");
 langBtn.addEventListener("click", () => {
   isEnglish = !isEnglish;
@@ -94,57 +76,10 @@ langBtn.addEventListener("click", () => {
   langBtn.textContent = isEnglish ? "🌐 Español" : "🌐 English";
 });
 
-// ========================
-// Botones toggle de mostrar/ocultar contenido
-const toggleButtons = document.querySelectorAll('.toggle-btn');
-toggleButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const targetId = btn.getAttribute('data-target');
-    const target = document.getElementById(targetId);
-
-    target.classList.toggle('mostrar');
-    target.classList.toggle('oculto');
-
-    const txts = textosToggle[targetId];
-btn.textContent = target.classList.contains('mostrar') 
-      ? (isEnglish ? txts.enHide : txts.esHide)
-      : (isEnglish ? txts.en : txts.es);
-    // Scroll suave hacia el contenido mostrado
-    //target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
-});
-
-// ========================
-// Reproducción de audio
-const audio = document.getElementById('audio');
-
-
-window.addEventListener('load', () => {
-  audio.play().catch(err => {
-    console.log('Autoplay bloqueado. El usuario debe hacer click para escuchar.', err);
-  });
-});
-
-
-const btnPlayAudio = document.getElementById('playAudio');
-btnPlayAudio.addEventListener('click', () => {
-  audio.play();
-});
-
-const textosToggle = {
-  "medio-info": { en: "Show info", es: "Mostrar info", enHide: "Hide info", esHide: "Ocultar info" },
-  "argumento": { en: "Show plot", es: "Mostrar argumento", enHide: "Hide plot", esHide: "Ocultar argumento" },
-  "reflexion": { en: "Show reflection", es: "Mostrar reflexión", enHide: "Hide reflection", esHide: "Ocultar reflexión" }
-};
-
-// ========================
-// Tabs de análisis
-const tabButtons = document.querySelectorAll('.tab-btn');
-const tabPanels = document.querySelectorAll('.tab-panel');
-
+// Manejo de click en tabs
 tabButtons.forEach(btn => {
   btn.addEventListener('click', () => {
-    // Desactivar todos los botones y paneles
+    // Desactivar todos
     tabButtons.forEach(b => b.classList.remove('active'));
     tabPanels.forEach(p => p.classList.remove('active'));
 
@@ -153,37 +88,37 @@ tabButtons.forEach(btn => {
     const panel = document.getElementById(btn.dataset.target);
     panel.classList.add('active');
 
-    // Actualizar contenido según el idioma
+    // Cambiar texto de ese panel según idioma
     const key = btn.dataset.target.replace('tab-', '');
-    let texto, imgSrc;
+    let texto = "";
     switch(key) {
       case 'estetica':
         texto = isEnglish ? "For me, This VR experience combines narrative storytelling with interactive elements." : "Para mi , esta experiencia VR combina la narración con elementos interactivos.";
-        imgSrc = "img/estetica-visual.jpg";
+      
         break;
       case 'ocularizacion':
-        texto = isEnglish ? "Presented in first person, immersing the user as the protagonist." : "Se presenta en primera persona, haciendo que el usuario viva la experiencia como protagonista.";
-        imgSrc = "img/ocularizacion.jpg";
+       
+      texto = isEnglish ? "Presented in first person, immersing the user as the protagonist." : "Se presenta en primera persona, haciendo que el usuario viva la experiencia como protagonista.";
         break;
       case 'relato':
-        texto = isEnglish ? "The narrative is linear, following the prisoner's routine step by step." : "El relato es lineal: seguimos la rutina del prisionero dentro de la celda paso a paso.";
-        imgSrc = "img/estructura-relato.jpg";
+      
+      texto = isEnglish ? "The narrative is linear, following the prisoner's routine step by step." : "El relato es lineal: seguimos la rutina del prisionero dentro de la celda paso a paso.";
         break;
       case 'interaccion':
-        texto = isEnglish ? "The user can explore the cell, interact with objects, and hear diegetic sounds." : "El usuario puede explorar la celda, interactuar con objetos y escuchar sonidos diegéticos del entorno.";
-        imgSrc = "img/interaccion.jpg";
+      
+      texto = isEnglish ? "The user can explore the cell, interact with objects, and hear diegetic sounds." : "El usuario puede explorar la celda, interactuar con objetos y escuchar sonidos diegéticos del entorno.";
         break;
       case 'sonido':
-        texto = isEnglish ? "Ambient sound and ex-prisoner dialogues reinforce immersion." : "Sonido ambiental y diálogos de ex-prisioneros refuerzan la inmersión y la atmósfera emocional.";
-        imgSrc = "img/sonido.jpg";
+      
+      texto = isEnglish ? "Ambient sound and ex-prisoner dialogues reinforce immersion." : "Sonido ambiental y diálogos de ex-prisioneros refuerzan la inmersión y la atmósfera emocional.";
         break;
       case 'protagonista':
-        texto = isEnglish ? "The user is the protagonist, experiencing the VR in first person." : "El usuario es el protagonista, viviendo la experiencia en primera persona dentro de la celda.";
-        imgSrc = "img/protagonista.jpg";
+      
+      texto = isEnglish ? "The user is the protagonist, experiencing the VR in first person." : "El usuario es el protagonista, viviendo la experiencia en primera persona dentro de la celda.";
         break;
     }
 
     panel.querySelector('p').textContent = texto;
-    panel.querySelector('img').src = imgSrc;
+
   });
 });
